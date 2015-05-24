@@ -12,6 +12,13 @@ module.exports = ->
         src: ['**']
         dest: '<%= path.build.root %>/'
       ]
+    scripts:
+      files: [
+        expand: true
+        cwd: '<%= path.source.scripts %>/'
+        src: ['**']
+        dest: '<%= path.build.scripts %>/'
+      ]
     images:
       files: [
         expand: true

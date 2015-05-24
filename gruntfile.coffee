@@ -92,6 +92,7 @@ module.exports = (grunt) ->
   ###
   grunt.registerTask 'copy:build', [
     'copy:boilerplates'
+    'copy:scripts'
     'copy:fonts'
     'copy:images'
   ]
@@ -102,7 +103,7 @@ module.exports = (grunt) ->
   grunt.registerTask 'default', [
     'clean'
     'copy:build'
-    'duojs'
+    # 'duojs'
     'nunjucks'
     # 'sprite'
     # 'webfont'
@@ -119,7 +120,7 @@ module.exports = (grunt) ->
   grunt.registerTask 'build', [
     'clean:build'
     'copy:build'
-    'duojs:build'
+    # 'duojs:build'
     'nunjucks:build'
     # 'sprite:build'
     # 'webfont:build'
