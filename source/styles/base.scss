@@ -152,6 +152,13 @@ span.highlight {
 }
   #footer_links ul.menu_footer li {
     float: left;
+
+    + li {
+		background-image: url(#{$images-path}/ui/footer_linkshaft.png);
+		background-repeat: no-repeat;
+		background-position: left;
+    }
+
   }
   #footer_links ul.menu_footer a {
     padding-right: 4px;
@@ -164,9 +171,6 @@ span.highlight {
     text-decoration: underline;
     text-transform: uppercase;
     display: inline;
-    background-image: url(#{$images-path}/ui/footer_linkshaft.png);
-    background-repeat: no-repeat;
-    background-position: left;
   }
   #footer_links ul.menu_footer a.first {
     background-image: none;
