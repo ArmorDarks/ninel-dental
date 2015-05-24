@@ -2,14 +2,14 @@
 
 
 {# --------- #}
-{% set pageTitle         = "Услуги" %}
-{% set pageDescription   = "Home page description" %}
-{% set pageContentTitle  = pageTitle %}
+{% set pageTitle         = getPage(pages, page.breadcrumb).name %}
+{% set pageMetaDesc      = getPage(pages, page.breadcrumb).meta %}
+{% set pageContentTitle  = false %}
 
 {% set pageClass         = "l-other" %}
 
-{% set showBreadcrumb    = true %}
-{% set breadcrumb        = ["услуги"] %}
+{% set showBreadcrumb    = false %}
+{% set breadcrumb        = page.breadcrumb %}
 {# --------- #}
 
 
