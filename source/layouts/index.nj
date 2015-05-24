@@ -1,0 +1,75 @@
+{% extends "_layout.nj" %}
+
+
+{# --------- #}
+{% set pageTitle        = "Home" %}
+{% set pageDescription  = "Home page description" %}
+{% set pageContentTitle = false %}
+
+{% set pageClass        = "l-index" %}
+
+{% set breadcrumb       = false %}
+{# --------- #}
+
+
+{% block main %}
+
+
+	<div id="cont_main-desc">
+	  <div id="main-h_photo"><img src="{{ path.images }}/ui/fheader_photo.png" width="128" height="157" alt="Photo" longdesc="Photo of Ninel" /></div>
+	  <div id="main-h_photo-text">Главный врач<br />
+	    Дубровина Нинель Александровна</div>
+	  <div id="main-h_text">
+	    <p style="margin-top:0px;padding-top:0px"><a class="main" href="/">Клиника художественной реставрации зубов «Нинель»</a> находится в самом центре стоматологической столицы – городе Полтава.</p>
+	    <p>Руководит клиникой Дубровина Нинель Александровна, врач-стоматолог высшей категории с 29-летним стажем работы.</p>
+	    <p>Клиника пользуется особым успехом не только среди жителей Полтавы и всей Украины, но и среди гостей из стран СНГ, Европы, Азии и Америки. Основным направлением деятельности клиники является прямая художественная реставрация зубов материалами фирмы «Dentsply», по биомиметической технологии Радлинского Сергея Владимировича.</p>
+	    <p>Мы также проводим эндодонтическое лечение зубов (лечение корневых каналов) с помощью современных технологий и оборудования фирмы «Dentsply». Особое внимание мы уделяем профессиональной гигиене полости рта, а уникальная методика лечения пародонтита с помощью «Vector»-терапии позволяет добиться успеха даже в самых сложных случаях. Также мы можем предложить услуги хирурга-стоматолога (удаление зубов и имплантация зубов).</p>
+	    <p>Весь этот комплекс услуг позволяет нам сделать Вашу улыбку сияющей, а стоматологическое здоровье полноценным.</p>
+	  </div>
+	</div>
+
+	<div id="cont_main">
+	  <div id="main_what"><img src="{{ path.images }}/ui/frame_what.png" width="334" height="31" alt="What do you want to know?" /></div>
+	  {# <div id="main_search">
+	    <jdoc:include type="modules" name="main_search" />
+	  </div> #}
+	  <div id="main_t-serv"><a href="/service"><img src="{{ path.images }}/ui/frame_t-service.png" width="296" height="65" alt="Our services" /></a></div>
+	  <div id="main_serv">
+	    <ul class="main_serv_ul">
+	      <li>Профессиональная гигиена полости рта</li>
+	      <li>Художественная реставрация зубов</li>
+	      <li>Эндодонтическое лечение</li>
+	      <li>Vector-терапия</li>
+	      <li>Другие услуги</li>
+	    </ul>
+	    <p><a href="/service">узнать больше...</a></p>
+	  </div>
+	  <div id="main_t-about"><a href="/about"><img src="{{ path.images }}/ui/frame_t-we.png" width="276" height="65" alt="About Us" /></a></div>
+	  <div id="main_aboutus"> Узнать больше о клинике, ее персонале, сертефикатах,<br />
+	    а так же достижениях можно <a href="/about">здесь...</a> <br />
+	    <br />
+	    <table border="0" cellspacing="0" cellpadding="0">
+	      <tr>
+	        <td width="255"><div align="right"><a href="/about/diploms"><img src="{{ path.images }}/ui/frame_i-dipl.jpg" width="206" height="143" alt="View diploms" /></a></div></td>
+	        <td><a href="/about/diploms">еще...</a></td>
+	      </tr>
+	    </table>
+	  </div>
+	  <div id="main_t-work"><a href="/work"><img src="{{ path.images }}/ui/frame_t-work.png" width="339" height="65" alt="Our work" /></a></div>
+	  <div id="main_work"><a href="/work">Здесь</a> Вы можете ознакомиться с некоторыми из<br />
+	    наших работ</div>
+	  <div id="main_t-contacts"><a href="/contacts"><img src="{{ path.images }}/ui/frame_t-contacts.png" width="298" height="66" alt="Our contacts" /></a></div>
+	  <div id="main_contacts"><a href="/contacts"><img src="{{ path.images }}/ui/frame_i-apl.jpg" width="169" height="181" alt="View how to go to us" /></a></div>
+	  <div id="main_contacts_text">Украина, г. Полтава<br />
+	    ул. Конституции, 3
+	    <p>тел.: <span class="main_contacts_phone">+38 (0532) 69-38-88</span><br />
+	      <span class="main_contacts_phone secondp">+38 (0532) 69-18-88</span><br />
+	      моб.: <span class="main_contacts_phone">+38 (068) 921-58-88</span></p>
+	    <p>e-mail: <a href="/contacts/mail">написать нам</a></p>
+	  </div>
+	  <div id="main_t-guestb"><a href="/guest"><img src="{{ path.images }}/ui/frame_t-guestb.png" width="457" height="65" alt="What talking about us" /></a></div>
+	  <div id="main_guestb">В конце концов, Вы должны знать <a href="/guest">что о нас думают</a> другие</div>
+	</div>
+
+
+{% endblock %}

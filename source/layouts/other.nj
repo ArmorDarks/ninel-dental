@@ -1,0 +1,33 @@
+{% extends "_layout.nj" %}
+
+
+{# --------- #}
+{% set pageTitle         = "Услуги" %}
+{% set pageDescription   = "Home page description" %}
+{% set pageContentTitle  = pageTitle %}
+
+{% set pageClass         = "l-other" %}
+
+{% set showBreadcrumb    = true %}
+{% set breadcrumb        = ["услуги"] %}
+{# --------- #}
+
+
+{% block main %}
+
+	<p>Клиника художественной реставрации «Нинель» предоставляет следующие услуги:</p>
+
+	<div id="other_serv">
+
+		<ul class="level_0">
+			{% for slug, entry in section["услуги"].sub %}
+			<li>
+				<a href="/услуги/{{ slug }}">{{ entry.name }}</a>
+				<span class="ul_under">{{ entry.name }}</span>
+			</li>
+			{% endfor %}
+		</ul>
+
+	</div>
+
+{% endblock %}
