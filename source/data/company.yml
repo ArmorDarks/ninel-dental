@@ -1,0 +1,56 @@
+---
+type: null
+typeFull: null
+name: Стоматологический кабинет Нинель
+nameFull: Стоматологический кабинет художественной реставрации зубов Нинель
+abr: Нинель
+details: null
+personnel:
+  -
+    position: Главный врач
+    name:
+      first: Нинель
+      middle: Александровна
+      last: Дубровина
+    photo: null
+  -
+    position: Врач
+    name:
+      first: Татьяна
+      middle: Александровна
+      last: Дубровина
+    photo: null
+adress:
+  -
+    index: null
+    country: Украина
+    city: Полтава
+    streetType: ул.
+    streetTypeFull: улица
+    street: Конституции
+    building: 3
+    liter: null
+    office: null
+    juridical: null
+    postal: null
+phone:
+  -
+    country: 38
+    city: 0532
+    phone: [69, 38, 88]
+  -
+    country: 38
+    city: 0532
+    phone: [69, 18, 88]
+  -
+    country: 38
+    city: 068
+    phone: [921, 58, 88]
+    mobile: true
+email:
+  - [null, null]
+worktime:
+  -
+    days: [1, 2, 3, 4, 5, 6]
+    start: [10, 00]
+    end: [20, 00]
