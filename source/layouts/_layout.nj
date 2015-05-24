@@ -15,7 +15,7 @@
  #
  #}
 
- {% macro menu(menu = section, breadcrumb = breadcrumb, showSub = true) %}
+ {% macro menu(menu = pages, breadcrumb = breadcrumb, showSub = true) %}
 
 	{% set active = "" %}
 
@@ -177,18 +177,18 @@
 	<!-- ============= -->
 
 	<div id="header_cont">
-	  <div id="header_chair"><img src="{{ path.images }}/ui/header_left_dentalc.png" width="149" height="122" alt="dental chair" /></div>
-	  <div id="header_ninel"><a href="/" title="Клиника художественной реставрации зубов «Нинель»"><img src="{{ path.images }}/ui/header_ninel.png" width="549" height="157" alt="Ninel Dental" /></a></div>
-	  <div id="header_mint"><img src="{{ path.images }}/ui/header_right_mintp.png" width="46" height="73" alt="mint" /></div>
+	  <div id="header_chair"><img src="/{{ path.images }}/ui/header_left_dentalc.png" width="149" height="122" alt="dental chair" /></div>
+	  <div id="header_ninel"><a href="/" title="Клиника художественной реставрации зубов «Нинель»"><img src="/{{ path.images }}/ui/header_ninel.png" width="549" height="157" alt="Ninel Dental" /></a></div>
+	  <div id="header_mint"><img src="/{{ path.images }}/ui/header_right_mintp.png" width="46" height="73" alt="mint" /></div>
 	  <div id="header_phone"> +38 0532 69-38-88<br />
 	    +38 068 921-58-88 </div>
-	  <div id="header_phone-b"><img src="{{ path.images }}/ui/header_right_phones_bot.png" width="201" height="42" alt="img" /></div>
+	  <div id="header_phone-b"><img src="/{{ path.images }}/ui/header_right_phones_bot.png" width="201" height="42" alt="img" /></div>
 	  <div id="header_lang">
-	    <div id="header_lang_bot"><img src="{{ path.images }}/ui/lang_bg-b.png" width="80" height="7" alt="img" /></div>
+	    <div id="header_lang_bot"><img src="/{{ path.images }}/ui/lang_bg-b.png" width="80" height="7" alt="img" /></div>
 	    <table width="60" border="0" cellspacing="0" cellpadding="0" align="center">
 	      <tr>
-	        <td width="30"><a href="#"><img src="{{ path.images }}/ui/lang_ru.png" width="30" height="38" alt="RU Language" /></a></td>
-	        <td width="30"><a href="#"><img src="{{ path.images }}/ui/lang_eng.png" width="30" height="38" alt="ENG Language" /></a></td>
+	        <td width="30"><a href="#"><img src="/{{ path.images }}/ui/lang_ru.png" width="30" height="38" alt="RU Language" /></a></td>
+	        <td width="30"><a href="#"><img src="/{{ path.images }}/ui/lang_eng.png" width="30" height="38" alt="ENG Language" /></a></td>
 	      </tr>
 	    </table>
 	  </div>
@@ -210,7 +210,7 @@
 		  <div id="main_cont_menu">
 		    {# <jdoc:include type="modules" name="main_search" /> #}
 		    <ul class="menu">
-		    	{{ menu(menu = section, showSub = true) }}
+		    	{{ menu(menu = pages, showSub = true) }}
 		    </ul>
 		  </div>
 		  <div id="main_cont_cont">
@@ -223,10 +223,10 @@
 
 		    {% if showBreadcrumb %}
 
-		    	<ul class="breadcrumb font-size- margin-top+ {{ 'site-wrapper' if customSiteWrapper }}">
-		    		<li class="breadcrumb__entry breadcrumb__root">
-		    			<a class="breadcrumb__link" href="/">Главная</a>
-		    		</li>
+		    	<div class="breadcrumbs">
+
+	    			<a class="pathway" href="/">Главная</a>
+	    			<img src="/{{ path.images }}/ui/arrow.png" alt="">
 
 		    		{% for key in breadcrumb %}
 
@@ -246,21 +246,18 @@
 
 		    			{% if loop.last and not crumb.href %}
 
-		    				<li class="breadcrumb__entry">
-		    					{{ crumb.name }}
-		    				</li>
+		    				<span>{{ crumb.name }}</span>
 
 		    			{% elif not crumb.href %}
 
-		    				<li class="breadcrumb__entry">
-		    					<a class="breadcrumb__link" href="{{ "/" + href if key.href == undefined else key.href }}">{{ crumb.name }}</a>
-		    				</li>
+	    					<a class="pathway" href="{{ "/" + href if key.href == undefined else key.href }}">{{ crumb.name }}</a>
+    						<img src="/{{ path.images }}/ui/arrow.png" alt="">
 
 		    			{% endif %}
 
 		    		{% endfor %}
 
-		    	</ul>
+		    	</div>
 
 		    {% endif %}
 
@@ -284,13 +281,13 @@
 	<!--/noindex-->
 	<div id="footer_links">
 	  <ul class="menu_footer">
-	  	{{ menu(menu = section, showSub = false) }}
+	  	{{ menu(menu = pages, showSub = false) }}
 	  </ul>
 	</div>
 	<table class="footer_cont" width="0" border="0" cellspacing="0" cellpadding="0">
 	  <tr>
-	    <td><img src="{{ path.images }}/ui/footer_bg-l.png" width="5" height="64" alt="img" /></td>
-	    <td class="footer_centr">© "{{ company.nameFull }}" {{ data.currentYear }}</td>
+	    <td><img src="/{{ path.images }}/ui/footer_bg-l.png" width="5" height="64" alt="img" /></td>
+	    <td class="footer_centr">© {{ company.nameFull }}</td>
 	    <td class="footer_centr">
 			<ul class="footer_counters">
 				<li>
@@ -338,7 +335,7 @@
 				</li>
 			</ul>
 	    </td>
-	    <td><img src="{{ path.images }}/ui/footer_bg-r.png" width="5" height="64" alt="img" /></td>
+	    <td><img src="/{{ path.images }}/ui/footer_bg-r.png" width="5" height="64" alt="img" /></td>
 	  </tr>
 	</table>
 	<div id="footer_closer"></div>
