@@ -2,13 +2,14 @@
 
 
 {# --------- #}
-{% set pageTitle        = "Home" %}
-{% set pageDescription  = "Home page description" %}
-{% set pageContentTitle = false %}
+{% set pageTitle         = getPage(pages, ["главная"]).name %}
+{% set pageMetaDesc      = getPage(pages, ["главная"]).meta %}
+{% set pageContentTitle  = false %}
 
-{% set pageClass        = "l-index" %}
+{% set pageClass         = "l-index" %}
 
-{% set breadcrumb       = false %}
+{% set showBreadcrumb    = false %}
+{% set breadcrumb        = ["главная"] %}
 {# --------- #}
 
 

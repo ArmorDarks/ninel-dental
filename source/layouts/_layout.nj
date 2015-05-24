@@ -114,7 +114,7 @@
 	<title>{{ pageTitle + " — " + site.name if pageTitle else site.name }}</title>
 
 	<!-- Description -->
-	<meta name="description" content="{{ pageDescription }}">
+	<meta name="description" content="{{ pageMetaDesc }}">
 
 	{# <!-- Mobile devices -->
 	<meta name="viewport" content="width=device-width, initial-scale=1"> #}
@@ -223,38 +223,47 @@
 
 		    {% if showBreadcrumb %}
 
-		    	<div class="breadcrumbs">
-	    			<a class="pathway" href="/">Главная</a>
+		    	<ul class="breadcrumb font-size- margin-top+ {{ 'site-wrapper' if customSiteWrapper }}">
+		    		<li class="breadcrumb__entry breadcrumb__root">
+		    			<a class="breadcrumb__link" href="/">Главная</a>
+		    		</li>
 
 		    		{% for key in breadcrumb %}
 
 		    			{% if loop.index0 == 0 %}
 
-		    				{% set crumb = section[key] %}
+		    				{% set crumb = pages[key] %}
+
+		    				{% set href = key %}
 
 		    			{% else %}
 
 		    				{% set crumb = crumb.sub[key] %}
 
+		    				{% set href = href + "/" + key %}
+
 		    			{% endif %}
 
 		    			{% if loop.last and not crumb.href %}
 
-	    					<img src="/media/system/images/arrow.png" alt="">
-	    					<span>{{ crumb.name }}</span>
+		    				<li class="breadcrumb__entry">
+		    					{{ crumb.name }}
+		    				</li>
 
 		    			{% elif not crumb.href %}
 
-	    					<img src="/media/system/images/arrow.png" alt="">
-	    					<a class="pathway" href="{{ "/" + key if key.href == undefined else key.href }}">{{ crumb.name }}</a>
+		    				<li class="breadcrumb__entry">
+		    					<a class="breadcrumb__link" href="{{ "/" + href if key.href == undefined else key.href }}">{{ crumb.name }}</a>
+		    				</li>
 
 		    			{% endif %}
 
 		    		{% endfor %}
 
-		    	</div>
+		    	</ul>
 
 		    {% endif %}
+
 			{% if pageContentTitle %}
 
 				<h1 class="">{{ pageContentTitle }}</h1>
@@ -281,7 +290,7 @@
 	<table class="footer_cont" width="0" border="0" cellspacing="0" cellpadding="0">
 	  <tr>
 	    <td><img src="{{ path.images }}/ui/footer_bg-l.png" width="5" height="64" alt="img" /></td>
-	    <td class="footer_centr">Copyrighted © Стамотологический кабинет “НІНЕЛЬ”</td>
+	    <td class="footer_centr">© "{{ company.nameFull }}" {{ data.currentYear }}</td>
 	    <td class="footer_centr">
 			<ul class="footer_counters">
 				<li>
