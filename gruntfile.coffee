@@ -50,9 +50,13 @@ module.exports = (grunt) ->
     # Specify files
     file:
       source:
+        script: '<%= path.source.scripts %>/main.js'
         style: '<%= path.source.styles %>/style.scss'
 
       build:
+        script:
+          compiled: '<%= path.build.scripts %>/main.js'
+          min: '<%= path.build.scripts %>/main.min.js'
         style:
           compiled: '<%= path.build.styles %>/style.compiled.css'
           prefixed: '<%= path.build.styles %>/style.prefixed.css'
@@ -77,10 +81,9 @@ module.exports = (grunt) ->
         title: '<%= pkg.title %>'
         version: '<%= pkg.version %>'
       company: grunt.file.readYAML 'source/data/company.yml'
-      section: grunt.file.readYAML 'source/data/sections.yml'
+      pages: grunt.file.readYAML 'source/data/pages.yml'
       data:
         currentYear: new Date().getFullYear()
-        example: grunt.file.readJSON 'source/data/example.json'
 
   grunt.loadTasks 'tasks'
 
@@ -99,12 +102,13 @@ module.exports = (grunt) ->
   grunt.registerTask 'default', [
     'clean'
     'copy:build'
+    'duojs'
     'nunjucks'
     # 'sprite'
     # 'webfont'
     'sass'
     'autoprefixer'
-    'responsive_images:thumbnails'
+    # 'responsive_images:thumbnails'
     'browserSync'
     'watch'
   ]
@@ -115,19 +119,21 @@ module.exports = (grunt) ->
   grunt.registerTask 'build', [
     'clean:build'
     'copy:build'
+    'duojs:build'
     'nunjucks:build'
-    'sprite:build'
-    'webfont:build'
+    # 'sprite:build'
+    # 'webfont:build'
     'sass:build'
     'autoprefixer:build'
     'uncss:build'
     'csso:build'
+    'uglify:build'
     'clean:styles'
     'clean:temp'
     'processhtml:build'
     'htmlmin:build'
-    'responsive_images:thumbnails'
-    'tinypng:build'
+    # 'responsive_images:thumbnails'
+    # 'tinypng:build'
     'cacheBust:build'
     'size_report:build'
   ]

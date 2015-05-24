@@ -1,10 +1,15 @@
+<!-- Main site logic -->
+<!-- build:[src] /{{ path.scripts }}/main.min.js -->
+<script src="/{{ path.scripts }}/main.js"></script>
+<!-- /build -->
+
 <!-- Tipsy loading -->
-<script type='text/javascript' src='/javascript/tipsy/jquery-1.4.2.min.js'></script>
-<script type='text/javascript' src='/javascript/tipsy/jquery.tipsy.js'></script>
-<link rel="stylesheet" href="/javascript/tipsy/tipsy.css" type="text/css" />
+<script type='text/javascript' src='/{{ path.scripts }}/tipsy/jquery-1.4.2.min.js'></script>
+<script type='text/javascript' src='/{{ path.scripts }}/tipsy/jquery.tipsy.js'></script>
+<link rel="stylesheet" href="/{{ path.scripts }}/tipsy/tipsy.css" type="text/css" />
 <!-- End Typsy loading -->
 
-<script src="/javascript//showHide.js" type="text/javascript"></script>
+<script src="/{{ path.scripts }}//showHide.js" type="text/javascript"></script>
 <script type="text/javascript">
 jQuery(document).ready(function(){
 

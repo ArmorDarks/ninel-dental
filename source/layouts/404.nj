@@ -1,0 +1,41 @@
+{% extends "_layout.nj" %}
+
+
+{# --------- #}
+{% set pageTitle         = "404 — страница не найдена" %}
+{% set pageMetaDesc      = "404 — страница не найдена" %}
+{% set pageContentTitle  = false %}
+
+{% set pageClass         = "l-404" %}
+{% set customSiteWrapper = false %}
+
+{% set showBreadcrumb    = false %}
+{% set breadcrumb        = ["404"] %}
+
+{% set blocknav          = false %}
+{% set subnav            = false %}
+{# --------- #}
+
+
+{% block hero %}
+
+
+
+{% endblock %}
+
+
+{% block main %}
+
+	<header class="margin-bottom+">
+		<p class="text+">Ничего себе!</p>
+
+		<h1 class="text++"><b>404</b> — страница не найдена!</h1>
+	</header>
+
+	<p>Возможно, страница была удалена или перемещена. А еще может быть здесь никогда ничего и не было.</p>
+
+	<p>Уверены, что здесь все таки что-то должно быть? Пожалуйста, <a href="/контакты">свяжитесь с нами</a>!</p>
+
+	<p class="margin-top+"><a class="btn btn--back link--back" href="/">На главную</a></p>
+
+{% endblock %}

@@ -30,6 +30,9 @@ module.exports = ->
     nunjucksPartials:
       files: ['<%= path.source.layouts %>{,**/}_*.nj']
       tasks: ['nunjucks']
+    scripts:
+      files: ['<%= path.source.scripts %>/{,**}*.js']
+      tasks: ['duojs']
     scss:
       files: [
         '<%= path.source.styles %>/{,**/}*.scss'
