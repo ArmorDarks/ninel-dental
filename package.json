@@ -5,7 +5,6 @@
   "author": "Serj Lavrin",
   "private": true,
   "devDependencies": {
-    "gmsmith": "^0.5.0",
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^3.0.0",
     "grunt-browser-sync": "^2.1.2",
@@ -23,13 +22,9 @@
     "nunjucks-markdown": "^1.0.0",
     "marked": "^0.3.3",
     "grunt-processhtml": "^0.3.7",
-    "grunt-responsive-images": "^0.1.6",
     "grunt-scss-lint": "^0.3.6",
     "grunt-size-report": "^0.1.1",
-    "grunt-spritesmith": "4.5.3",
-    "grunt-tinypng": "^0.5.3",
     "grunt-uncss": "0.3.8",
-    "grunt-webfont": "0.5.2",
     "jit-grunt": "^0.9.1",
     "time-grunt": "^1.1.1"
   },
