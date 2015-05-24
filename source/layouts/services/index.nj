@@ -3,12 +3,12 @@
 
 {# --------- #}
 {% set pageTitle         = getPage(pages, page.breadcrumb).name %}
-{% set pageMetaDesc      = getPage(pages, page.breadcrumb).meta %}
-{% set pageContentTitle  = false %}
+{% set pageMetaDesc      = getPage(pages, page.breadcrumb).metaDesc %}
+{% set pageContentTitle  = pageTitle %}
 
 {% set pageClass         = "l-other" %}
 
-{% set showBreadcrumb    = false %}
+{% set showBreadcrumb    = true %}
 {% set breadcrumb        = page.breadcrumb %}
 {# --------- #}
 
@@ -20,10 +20,10 @@
 	<div id="other_serv">
 
 		<ul class="level_0">
-			{% for slug, entry in section["услуги"].sub %}
+			{% for slug, entry in getPage(pages, page.breadcrumb).sub %}
 			<li>
-				<a href="/услуги/{{ slug }}">{{ entry.name }}</a>
-				<span class="ul_under">{{ entry.name }}</span>
+				<a href="{{ slug }}">{{ entry.name }}</a>
+				<span class="ul_under">{{ entry.descShort }}</span>
 			</li>
 			{% endfor %}
 		</ul>

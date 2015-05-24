@@ -1,0 +1,123 @@
+{% extends "_layout.nj" %}
+
+
+{# --------- #}
+{% set pageTitle         = getPage(pages, page.breadcrumb).name %}
+{% set pageMetaDesc      = getPage(pages, page.breadcrumb).metaDesc %}
+{% set pageContentTitle  = pageTitle %}
+
+{% set pageClass         = "l-other" %}
+
+{% set showBreadcrumb    = true %}
+{% set breadcrumb        = page.breadcrumb %}
+{# --------- #}
+
+
+{% block main %}
+
+
+	<div class="item-page">
+
+		<br>
+
+		<h3>Лицензия</h3>
+
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/licenses/license-01.jpg" title="Лицензия стоматологического кабинета">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/diploms/license-100pxx143.jpg" border="0" alt="Лицензия стоматологического кабинета" width="100px" height="143">
+		</a>
+
+		<br><br><br>
+
+		Стоматологический кабинет работает на основе Лицензии МОЗУ серия AB № 539727 от 20 мая 2010 года (бессрочная)
+
+		<br><br><br><br><br><br><br><br>
+
+		<h3>Дипломы и сертификаты</h3>
+
+		Это лишь часть дипломов и сертификатов, которые были получены стоматологическим кабинетом за время его деятельности:
+
+		<br><br>
+
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-02.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 2-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-03.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 3-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-04.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 4-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-06.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 6-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-08.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 8-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-10.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 10-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-11.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 11-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-12.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 12-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-13.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 13-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-14.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 14-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-17.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 17-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-19.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 19-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-20.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 20-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-21.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 21-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-22.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 22-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-23.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 23-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-24.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 24-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-27.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 27-150x217px.jpg" border="0" alt="Сертификат" height="217px" width="150">
+		</a>
+
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-05.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 5-320x217px.jpg" border="0" alt="Сертификат" height="217px" width="320">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-07.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 7-320x217px.jpg" border="0" alt="Сертификат" height="217px" width="320">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-09.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 9-320x217px.jpg" border="0" alt="Сертификат" height="217px" width="320">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-15.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 15-320x217px.jpg" border="0" alt="Сертификат" height="217px" width="320">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-16.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 16-320x217px.jpg" border="0" alt="Сертификат" height="217px" width="320">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-18.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 18-320x217px.jpg" border="0" alt="Сертификат" height="217px" width="320">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-25.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 25-320x217px.jpg" border="0" alt="Сертификат" height="217px" width="320">
+		</a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/diploms/diplom-26.jpg" title="Сертификат">
+			<img class="shrink_diplom" src="/{{ path.images }}/thumbnails/diploms/scan 26-320x217px.jpg" border="0" alt="Сертификат" height="217px" width="320">
+		</a>
+	</div>
+
+
+{% endblock %}

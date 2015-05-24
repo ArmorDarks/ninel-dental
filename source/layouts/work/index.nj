@@ -1,0 +1,197 @@
+{% extends "_layout.nj" %}
+
+
+{# --------- #}
+{% set pageTitle         = getPage(pages, page.breadcrumb).name %}
+{% set pageMetaDesc      = getPage(pages, page.breadcrumb).metaDesc %}
+{% set pageContentTitle  = pageTitle %}
+
+{% set pageClass         = "l-other" %}
+
+{% set showBreadcrumb    = true %}
+{% set breadcrumb        = page.breadcrumb %}
+{# --------- #}
+
+
+{% block main %}
+
+
+	<div class="item-page">
+
+
+
+		<a class="highlight divslide" href="#" rel="#slide_box1">Наши врачи во время работы</a>
+		<div id="slide_box1" class="toggleDiv" style="display:none;overflow:auto;padding-bottom:15px;">
+			<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_2706.jpg" title="Работа стоматолога">
+				<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_2706-326pxx217.jpg" border="0" alt="Работа стоматолога" width="326px" height="217"></a>
+			<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_2827.jpg" title="Работа стоматолога">
+				<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_2827-326pxx217.jpg" border="0" alt="Работа стоматолога" width="326px" height="217"></a>
+
+			<!-- <a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_2727.jpg" onclick='return hs.expand(this, { captionText: "Работа стоматолога", slideshowGroup: "2" })' title="Работа стоматолога">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_2727-326pxx422px.jpg" border="0" alt="Работа стоматолога" width="326px" height="422px" />
+		</a>
+		-->
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_2739.jpg" title="Работа стоматолога">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_2739-326pxx217.jpg" border="0" alt="Работа стоматолога" width="326px" height="217"></a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_2783.jpg" title="Работа стоматолога">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_2783-326pxx217.jpg" border="0" alt="Работа стоматолога" width="326px" height="217"></a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_2778.jpg" title="Работа стоматолога">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_2778-326pxx489.jpg" border="0" alt="Работа стоматолога" width="326px" height="489"></a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_2780.jpg" title="Работа стоматолога">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_2780-326pxx489.jpg" border="0" alt="Работа стоматолога" width="326px" height="489"></a>
+
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_2828.jpg" title="Работа стоматолога">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_2828-326pxx217.jpg" border="0" alt="Работа стоматолога" width="326px" height="217"></a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_2830.jpg" title="Работа стоматолога">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_2830-326pxx217.jpg" border="0" alt="Работа стоматолога" width="326px" height="217"></a>
+
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_1432.jpg" title="Работа стоматолога">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_1432-326pxx489.jpg" border="0" alt="Работа стоматолога" width="326px" height="489"></a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_1435.jpg" title="Работа стоматолога">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_1435-326pxx489.jpg" border="0" alt="Работа стоматолога" width="326px" height="489"></a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_1466.jpg" title="Работа стоматолога">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_1466-326pxx422px.jpg" border="0" alt="Работа стоматолога" width="326px" height="422px"></a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_1426.jpg" title="Работа стоматолога">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_1426-326pxx217.jpg" border="0" alt="Работа стоматолога" width="326px" height="217"></a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_1467.jpg" title="Работа стоматолога">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_1467-326pxx194.jpg" border="0" alt="Работа стоматолога" width="326px" height="194"></a>
+	</div>
+
+	<a class="highlight divslide" href="#" rel="#slide_box2">Оборудование</a>
+	<div id="slide_box2" class="toggleDiv" style="display:none;overflow:auto;padding-bottom:15px;">
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_1444.jpg" title="Стоматологическая установка Anthos A3 Plus">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_1444-326pxx217.jpg" border="0" alt="Стоматологическая установка Anthos A3 Plus" width="326px" height="217"></a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_1445.jpg" title="Стоматологическая установка Anthos A3 Plus">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_1445-326pxx217.jpg" border="0" alt="Стоматологическая установка Anthos A3 Plus" width="326px" height="217"></a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_1446.jpg" title="Стоматологическая установка Anthos A3 Plus">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_1446-326pxx422px.jpg" border="0" alt="Стоматологическая установка Anthos A3 Plus" width="326px" height="422px"></a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_1458.jpg" title="Стоматологическая лампа D-TEC">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_1458-326pxx194.jpg" border="0" alt="Стоматологическая лампа D-TEC" width="326px" height="194"></a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_1451.jpg" title="Аппарат Vector">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_1451-326pxx217.jpg" border="0" alt="Аппарат Vector" width="326px" height="217"></a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_1448.jpg" title="Стереоочки для просмотра кинофильмов во время работы стоматолога">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_1448-326pxx217.jpg" border="0" alt="Стереоочки для просмотра кинофильмов во время работы стоматолога" width="326px" height="217"></a>
+		<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/photos/IMG_2793.jpg" title="Пистолет Dentsply">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_2793-326pxx217.jpg" border="0" alt="Пистолет Dentsply" width="326px" height="217"></a>
+	</div>
+
+	<a class="highlight divslide" href="#" rel="#slide_box3">Примеры наших работ</a>
+	<div id="slide_box3" class="toggleDiv" style="display:none;">
+
+		<style>
+			#slide_box3 a.thumbnail {
+				display: block;
+			}
+			#slide_box3 .links-unblock a.thumbnail {
+				display: inline-block;
+			}
+		</style> <i><b>Примечание:</b></i>
+		наведите на фотографию чтобы увидеть описание работы
+		<h3 style="padding-top:20px">Реставрация:</h3>
+
+		<div style="overflow:auto;;padding-bottom:35px;">
+			<div class="other_work_210">
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_1_beforer.jpg" title="Вид до">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_1_beforer-142pxx95.jpg" border="0" title="Вид до" alt="Вид до" width="142px" height="95"></a>
+			</div>
+			<img class="arrow_work" src="/{{ path.images }}/ui/arrow_work.gif" border="0" width="26px" height="60px">
+			<div class="other_work_210">
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_1_after.jpg" title="Вид после">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_1_after-142pxx95.jpg" border="0" title="Вид после" alt="Вид после" width="142px" height="95"></a>
+			</div>
+		</div>
+
+		<div style="overflow:auto;padding-bottom:35px;">
+			<div class="other_work_210_indouble">
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_2_IMG_0618.JPG" title="Исходная ситуация: четыре передних верхних зуба после удаления старых пломб и тканей поражённых кариесом под ними">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_2_IMG_0618-142pxx106.JPG" border="0" alt="Исходная ситуация: четыре передних верхних зуба после удаления старых пломб и тканей поражённых кариесом под ними" title="Исходная ситуация: четыре передних верхних зуба после удаления старых пломб и тканей поражённых кариесом под ними" width="142px" height="106"></a>
+			</div>
+			<img class="arrow_work_double" src="/{{ path.images }}/ui/arrow_work.gif" border="0" width="26px" height="60px">
+			<div class="other_work_210">
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_2_IMG_1682 c.JPG" title="Вид после художественной реставрации">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_2_IMG_1682 c-142pxx106.JPG" border="0" alt="Вид после художественной реставрации" title="Вид после художественной реставрации" width="142px" height="106"></a>
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_2_IMG_1695.JPG" title="Вид после: гармония в улыбке">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_2_IMG_1695-142pxx106.JPG" border="0" alt="Вид после: гармония в улыбке" title="Вид после: гармония в улыбке" width="142px" height="106"></a>
+			</div>
+		</div>
+
+		<div style="overflow:auto;padding-bottom:35px;">
+			<div class="other_work_210">
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_3_IMG_0551.JPG" title="Исходная ситуация: выраженная скученность зубов нижней челюсти,патологическая стираемость, кариес, изменения в цвете">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_3_IMG_0551-142pxx106.JPG" border="0" title="Исходная ситуация: выраженная скученность зубов нижней челюсти,патологическая стираемость, кариес, изменения в цвете" alt="Исходная ситуация: выраженная скученность зубов нижней челюсти,патологическая стираемость, кариес, изменения в цвете" width="142px" height="106"></a>
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_3_IMG_0550.JPG" title="Исходная ситуация: вид сверху">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_3_IMG_0550-142pxx106.JPG" border="0" title="Исходная ситуация: вид сверху" alt="Исходная ситуация: вид сверху" width="142px" height="106"></a>
+			</div>
+			<img class="arrow_work_double" src="/{{ path.images }}/ui/arrow_work.gif" border="0" width="26px" height="60px">
+			<div class="other_work_210">
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_3_IMG_1520.JPG" title="На этапе работы">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_3_IMG_1520-142pxx106.JPG" border="0" title="На этапе работы" alt="На этапе работы" width="142px" height="106"></a>
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_3_IMG_1564.JPG" title="На этапе работы">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_3_IMG_1564-142pxx106.JPG" border="0" title="На этапе работы" alt="На этапе работы" width="142px" height="106"></a>
+			</div>
+			<img class="arrow_work_double" src="/{{ path.images }}/ui/arrow_work.gif" border="0" width="26px" height="60px">
+			<div class="other_work_210">
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_3_IMG_1908.JPG" title="Вид после художественной реставрации зубов нижней челюсти">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_3_IMG_1908-142pxx106.JPG" border="0" title="Вид после художественной реставрации зубов нижней челюсти" alt="Вид после художественной реставрации зубов нижней челюсти" width="142px" height="106"></a>
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_3_IMG_1916.JPG" title="Вид после: гармония зубного ряда и нижней губы">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_3_IMG_1916-142pxx106.JPG" border="0" title="Вид после: гармония зубного ряда и нижней губы" alt="Вид после: гармония зубного ряда и нижней губы" width="142px" height="106"></a>
+			</div>
+		</div>
+
+		<div style="overflow:auto;;padding-bottom:35px;">
+			<div class="other_work_210">
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_5_1-1.jpg" title="Исходная ситуация: скученность зубов нижней челюсти, множественный кариес, патологическая стираемость зубов нижней челюсти">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_5_1-1-142pxx106.jpg" border="0" title="Исходная ситуация: скученность зубов нижней челюсти, множественный кариес, патологическая стираемость зубов нижней челюсти" alt="Исходная ситуация: скученность зубов нижней челюсти, множественный кариес, патологическая стираемость зубов нижней челюсти" width="142px" height="106"></a>
+			</div>
+			<img class="arrow_work" src="/{{ path.images }}/ui/arrow_work.gif" border="0" width="26px" height="60px">
+			<div class="other_work_210">
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_5_1-2.jpg" title="Вид после">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_5_1-2-142pxx106.jpg" border="0" title="Вид после" alt="Вид после" width="142px" height="106"></a>
+			</div>
+		</div>
+
+		<div style="overflow:auto;;padding-bottom:35px;">
+			<div class="other_work_210">
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_5_2-1.jpg" title="Исходная ситуация: патология прикуса, стираемость зубов, множественный кариес зубов">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_5_2-1-142pxx106.jpg" border="0" title="Исходная ситуация: патология прикуса, стираемость зубов, множественный кариес зубов" alt="Исходная ситуация: патология прикуса, стираемость зубов, множественный кариес зубов" width="142px" height="106"></a>
+			</div>
+			<img class="arrow_work" src="/{{ path.images }}/ui/arrow_work.gif" border="0" width="26px" height="60px">
+			<div class="other_work_210">
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_5_2-2.jpg" title="Вид после">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_5_2-2-142pxx106.jpg" border="0" title="Вид после" alt="Вид после" width="142px" height="106"></a>
+			</div>
+		</div>
+
+		<div style="overflow:auto;padding-bottom:35px;">
+			<div class="other_work_210">
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_6_1.jpg" title="Исходная ситуация: глубокий прикус, патологическая стираемость зубов, большая диастема между центральными резцами">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_6_1-142pxx106.jpg" border="0" title="Исходная ситуация: глубокий прикус, патологическая стираемость зубов, большая диастема между центральными резцами" alt="Исходная ситуация: глубокий прикус, патологическая стираемость зубов, большая диастема между центральными резцами" width="142px" height="106"></a>
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_6_2.jpg" title="Исходная ситуация: другой ракурс">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_6_2-142pxx106.jpg" border="0" title="Исходная ситуация: другой ракурс" alt="Исходная ситуация: другой ракурс" width="142px" height="106"></a>
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_6_3.jpg" title="Исходная ситуация: стираемость и повороты нижних зубов">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_6_3-142pxx106.jpg" border="0" title="Исходная ситуация: стираемость и повороты нижних зубов" alt="Исходная ситуация: стираемость и повороты нижних зубов" width="142px" height="106"></a>
+			</div>
+			<img class="arrow_work_double" src="/{{ path.images }}/ui/arrow_work.gif" border="0" width="26px" height="60px">
+			<div class="other_work_210">
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_6_4.jpg" title="Вид после художественной реставрации">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_6_4-142pxx106.jpg" border="0" title="Вид после художественной реставрации" alt="Вид после художественной реставрации" width="142px" height="106"></a>
+				<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_6_5.jpg" title="Вид после: другой ракурс">
+					<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_6_5-142pxx106.jpg" border="0" title="Вид после: другой ракурс" alt="Вид после: другой ракурс" width="142px" height="106"></a>
+			</div>
+		</div>
+
+		<h3>Адгезивный мостовидный протез:</h3>
+		<div class="links-unblock" style="padding-left:19px">
+			<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_4_IMG_2635.jpg" title="Адгезивный мостовидный протез">
+				<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_4_IMG_2635-142pxx106.jpg" border="0" alt="Адгезивный мостовидный протез" title="Адгезивный мостовидный протез" width="142px" height="106"></a>
+			<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_4_IMG_3366.jpg" title="Адгезивный мостовидный протез">
+				<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_4_IMG_3366-142pxx106.jpg" border="0" alt="Адгезивный мостовидный протез" title="Адгезивный мостовидный протез" width="142px" height="106"></a>
+			<a class="thumbnail fancybox" data-fancybox-group="group" style="" href="/{{ path.images }}/works/teeth_4_IMG_4148.jpg" title="Адгезивный мостовидный протез">
+				<img class="shrink_work" src="/{{ path.images }}/thumbnails/works/teeth_4_IMG_4148-142pxx106.jpg" border="0" alt="Адгезивный мостовидный протез" title="Адгезивный мостовидный протез" width="142px" height="106"></a>
+		</div>
+	</div>
+
+	</div>
+
+
+{% endblock %}

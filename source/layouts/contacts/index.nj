@@ -1,0 +1,75 @@
+{% extends "_layout.nj" %}
+
+
+{# --------- #}
+{% set pageTitle         = getPage(pages, page.breadcrumb).name %}
+{% set pageMetaDesc      = getPage(pages, page.breadcrumb).metaDesc %}
+{% set pageContentTitle  = pageTitle %}
+
+{% set pageClass         = "l-other" %}
+
+{% set showBreadcrumb    = true %}
+{% set breadcrumb        = page.breadcrumb %}
+{# --------- #}
+
+
+{% block main %}
+
+
+	<div class="item-page">
+
+		<div style="float:right;padding-top:22px;padding-right:50px;">
+			<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/photos/IMG_1487.jpg" title="Стоматологический кабинет &amp;quot;Нинель&amp;quot;">
+				<img class="shrink_right" src="/{{ path.images }}/thumbnails/photos/IMG_1487-310pxx455px.jpg" border="0" alt="Стоматологический кабинет &quot;Нинель&quot;" width="310px" height="455px"></a>
+		</div>
+		<br>
+		<h3>Наш адрес:&nbsp;</h3>
+		<p style="padding-left: 60px;">Украина, г. Полтава</p>
+		<p style="padding-left: 60px;">ул. Конституции, 3</p>
+		<br>
+		<h3>Время работы:</h3>
+		<p style="padding-left: 60px;">Пн-Сб: с 10:00 до 20:00</p>
+		<p style="padding-left: 60px;">Вс: выходной</p>
+		<br>
+		<h3>Телефоны:&nbsp;</h3>
+		<p style="padding-left: 60px;"> <strong>+38 (0532) 69-38-88</strong>
+		</p>
+		<p style="padding-left: 60px;"> <strong>+38 (0532) 69-18-88&nbsp;</strong>
+		</p>
+		<p style="padding-left: 60px;">
+			<strong>+38 068 921-58-88</strong>
+		</p>
+		<br>
+		<h3>Email:&nbsp;</h3>
+		<p style="padding-left: 60px;">
+			<a href="/index.php/contacts/mail">написать нам</a>
+		</p>
+		<p>&nbsp;</p>
+		<h3>Как нас найти:</h3>
+		<p style="padding-left: 30px;">
+			Стоматологический кабинет "Нинель" находится напротив Краеведческого Музея, через Солнечный Парк.
+		</p>
+		<p style="padding-left: 30px;">
+			Ближайшими ориентирами являются: библиотека им. Котляревского, памятник Ленина, Национальный Банк.
+		</p>
+		<p style="padding-left: 30px;">
+			До кабинета удобней всего добираться с остановки Ленина - именно напротив нее находится большое белое здание библиотеки им. Котляревского, слева от которого и расположен стоматологический кабинет
+		</p>
+		<div style="float:left;height:260px;padding-top: 3px;text-align:center;font-size:11px;">
+			<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/photos/IMG_1480.jpg" title="Библиотека им. Котляревского">
+				<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_1480-293pxx215px.jpg" border="0" alt="Библиотека им. Котляревского" width="293px" height="215px"></a>
+			<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/photos/IMG_1481.jpg" title="Дорога к стоматологическому кабинету от библиотеки">
+				<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_1481-143x215px.jpg" border="0" alt="Дорога к стоматологическому кабинету от библиотеки" height="215px" width="143"></a>
+			<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/photos/IMG_1408.jpg" title="Стоматологический кабинет &amp;quot;Нинель&amp;quot;">
+				<img class="shrink_left" src="/{{ path.images }}/thumbnails/photos/IMG_1408-200x215px.jpg" border="0" alt="Стоматологический кабинет &quot;Нинель&quot;" height="215px" width="200"></a>
+			Как пройти к стоматологическому кабинету "Нинель" от библиотеки им. Котляревского
+		</div>
+		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/ninel_map.jpg" title="Карта проезда к стоматологическому кабинету">
+			<img class="shrink_left" src="/{{ path.images }}/thumbnails/ninel_map-667pxx370.jpg" border="0" alt="Карта проезда к стоматологическому кабинету" width="667px" height="370"></a>
+		<p>
+			<a href="http://maps.google.ru/maps?q=%D0%BF%D0%BE%D0%BB%D1%82%D0%B0%D0%B2%D0%B0+%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%86%D0%B8%D0%B8+3&amp;hl=ru&amp;ie=UTF8&amp;sll=49.584605,34.561937&amp;sspn=0.011157,0.019205&amp;vpsrc=0&amp;hnear=%D1%83%D0%BB.+%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%86%D0%B8%D0%B8,+3,+%D0%9F%D0%BE%D0%BB%D1%82%D0%B0%D0%B2%D0%B0,+%D0%9F%D0%BE%D0%BB%D1%82%D0%B0%D0%B2%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0&amp;t=m&amp;z=16" target="blank" title="Просмотреть в Google Maps">Просмотреть в Google Maps&nbsp;</a>
+		</p>
+	</div>
+
+
+{% endblock %}
