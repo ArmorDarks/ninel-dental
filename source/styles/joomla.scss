@@ -1,0 +1,207 @@
+
+   /* Joomla's headers */
+
+h1, h2, h3 {
+  font: normal 22px "Lucida Sans Unicode", "Lucida Grande", "Myriad Pro", sans-serif;
+  margin: 0.3em 0;
+}
+h4, h5, h6{
+  font: bold 13px "Lucida Sans Unicode", "Lucida Grande", "Myriad Pro", sans-serif;
+  margin: 0.2em 0;
+}
+h2{
+  font-size: 18px;
+}
+h1 {
+	color: rgb(75, 142, 194);
+	font-family: "Lucida Sans Unicode", "Lucida Grande", "Myriad Pro", sans-serif;
+	font-size: 24px;
+	font-weight: normal;
+	line-height: 26px;
+	margin-bottom: 0px;
+	margin-left: 3px;
+	margin-right: 0px;
+	margin-top: 15px;
+}
+.h1_gallery {    /* for gallery headers */
+	font-size: 28px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 10px;
+}
+h2 {
+	font-size: 22px;
+	padding-bottom: 8px;
+	padding-left: 20px;
+}
+h3 {
+	font-size: 18px;
+	padding-bottom: 8px;
+	padding-left: 20px;
+}
+
+  /* Joomla's print, mail and etc icons */
+
+ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+
+	ul.actions li
+	{
+        	display:inline;
+	}
+
+	ul.actions a
+	{
+       		border: 0px;
+	}
+
+  /* Joomla's search-form */
+
+#mod-search-searchword {
+	border-top: 1px solid #bcbfc2;
+	border-right: 1px solid #d3d5d7;
+	border-left: 1px solid #c0c3c6;
+	border-bottom: 1px solid #cdd5dd;
+	background-image: url(#{$images-path}/ui/search-bg.png);
+	background-repeat: no-repeat;
+	background-position: 1px 1px;
+	padding-left: 21px;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	padding-right: 3px;
+	color: #777777;
+	background-color: #FFFFFF;
+	width: 163px;
+  	margin-left: 38px;
+	margin-bottom: 0px;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+	#mod-search-searchword:hover, #mod-search-searchword:focus {
+		color: #000000;
+		border: 1px solid #349acc;
+	}
+
+
+  /* Joomla's search-form (displaying after search) */
+
+.word, .phrases, .form-limit {
+	border: 0px;
+}
+#search-searchword {
+	border-top: 1px solid #bcbfc2;
+	border-right: 1px solid #d3d5d7;
+	border-left: 1px solid #c0c3c6;
+	border-bottom: 1px solid #cdd5dd;
+	background-image: url(#{$images-path}/ui/search-bg.png);
+	background-repeat: no-repeat;
+	background-position: 1px 1px;
+	padding-left: 21px;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	padding-right: 3px;
+	color: #777777;
+	background-color: #FFFFFF;
+	width: 163px;
+  	margin-left: 5px;
+	margin-bottom: 0px;
+	margin-right: 5px;
+}
+#search-searchword:hover, #search-searchword:focus {
+	color: #000000;
+	border: 1px solid #349acc;
+}
+
+   /* com_chronoform forms */
+
+#input_info_submit_container_div, #input_admin_submit_container_div {
+	padding-left: 150px;
+	color: #000;
+}
+#input_human_checkbox {
+	background-color: silver;
+}
+.chronoform {
+	text-indent: -9999px;
+	height: 1px;
+	font-size: 1px;
+}
+
+   /* pathway */
+.breadcrumbs span {
+	font-size: 11px;
+	color: #A1A1A1;
+	text-decoration: none;
+}
+
+a.pathway:link {
+	font-size: 11px;
+	color: #7BC3EC;
+	text-decoration: none;
+}
+
+a.pathway:visited {
+	font-size: 11px;
+	color: #777676;
+	text-decoration: none;
+}
+
+   /* plg_maverikthumbnails */
+
+.shrink_left, .shrink_right, .shrink_diplom, .shrink_work {
+	padding: 2px;
+	margin-bottom: 5px;
+	border: 1px solid silver;
+	background-color: #f5f5f5;
+}
+.shrink {
+	padding: 2px;
+	border: 1px solid silver;
+	background-color: #f5f5f5;
+}
+.shrink_left {
+	float: left;
+	margin-right: 10px;
+}
+.shrink_right {
+	float: right;
+	margin-left: 10px;
+}
+.shrink_diplom {
+	float: left;
+	margin-right: 9px;
+	margin-left: 6px;
+	margin-bottom: 12px;
+}
+.shrink_work {
+	margin-right: 10px;
+}
+.shrink_left:hover, .shrink_right:hover, .shrink_diplom:hover, .shrink:hover, .shrink_work:hover {
+	border: 1px solid #349acc;
+}
+
+   /* articles p */
+
+.item-page p {
+	line-height: 15pt;
+	padding-top: 0px;
+	padding-left: 3px;
+}
+
+  /* com_xmap */
+
+#xmap ul.level_0 {
+	padding-left: 65px;
+	line-height: 18pt;
+}
+#xmap ul.level_1 {
+	padding-left: 65px;
+	line-height: 18pt;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}

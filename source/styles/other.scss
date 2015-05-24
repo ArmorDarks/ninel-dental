@@ -1,0 +1,79 @@
+#other_serv ul.level_0 {
+	padding-left: 65px;
+	padding-top: 10px;
+}
+
+.ul_under {
+	font-size: 11px;
+	padding-left: 0px;
+	display: block;
+	padding-top: 6px;
+	padding-bottom: 20px;
+	color: #666
+}
+
+	/* -----Правое меню------  */
+
+#main_cont_menu ul.menu {
+	list-style-type: none;
+	padding: 5px 0px 10px 0px;
+	margin-top: 0px;
+}
+	ul.menu a {
+		color: #349acc;
+		display: block;
+		font-size: 14px;
+		padding: 8px 0px 8px 13px;
+		text-decoration: underline;
+		border-left: 1px solid #999999;
+	}
+	ul.menu a:hover, ul.menu a:focus, ul.menu li.current a {
+		color: #000;
+		text-decoration: none;
+		border-left: 1px solid #333333;
+	}
+		/* -----Подпункт------  */
+	#main_cont_menu ul.menu li ul {
+		list-style-type: none;
+	}
+	#main_cont_menu ul.menu li ul a {
+		color: #349acc;
+		font-size: 11px;
+		padding: 3px 0px 3px 26px;
+		margin-left: -40px;
+		text-decoration: underline;
+		border-left: 1px solid #999999;
+	}
+	#main_cont_menu ul.menu li ul a:hover, #main_cont_menu ul.menu li ul a:focus, #main_cont_menu ul.menu li ul li.current a {
+		color: #000;
+		text-decoration: none;
+		border-left: 1px solid #333333;
+	}
+.arrow_work, .arrow_work_double {
+	padding-left:7px;
+	padding-right:15px;
+	float:left;
+}
+	.arrow_work {
+		padding-top:20px;
+	}
+	.arrow_work_double {
+		padding-top:87px;
+	}
+
+.other_work_210, .other_work_210_indouble {
+	text-align:center;
+	margin-top:0px;
+	margin-bottom:0px;
+	padding:0px;
+	width: 196px;
+	float:left;
+}
+.other_work_210_indouble {
+	padding-top:64px;
+}
+
+.desc-list li {
+	padding-bottom: 15px;
+	padding-top: 5px;
+}

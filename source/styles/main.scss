@@ -1,0 +1,160 @@
+a.main:visited {
+	color: #349acc;
+}
+
+.hcbold {
+	font-weight: bold;
+	font-size:18px;
+	color: #4d9d6e;
+}
+#cont_main-desc {
+	width: 942px;
+	position: relative;
+	margin: 0 auto;
+	height:284px;
+}
+#cont_main {
+	position: relative;
+	height:771px;
+}
+#main-h_photo {
+	position: absolute;
+	height: 157px;
+	width: 128px;
+	top: -9px;
+}
+#main-h_photo-text {
+	position: absolute;
+	height: 29px;
+	width: 140px;
+	top: 153px;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	padding: 0px;
+	left: -6px;
+}
+#main-h_text {
+	left: 143px;
+	top: 24px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	text-align: justify;
+	position: absolute;
+	height: 155px;
+	width: 795px;
+	/* line-height: 22pt; */
+}
+#main_what {
+	position: absolute;
+	height: 31px;
+	width: 334px;
+	left: 5px;
+	top: 0px;
+}
+#main_search {
+	position: absolute;
+	height: 20px;
+	width: 199px;
+	left: 310px;
+	top: -3px;
+}
+#main_t-serv {
+	position: absolute;
+	left: 86px;
+	top: 54px;
+}
+#main_serv {
+	position: absolute;
+	left: 86px;
+	top: 132px;
+	background-image: url(#{$images-path}/ui/frame_i-vsplesk.jpg);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	height: 215px;
+	width: 344px;
+
+}
+	#main_serv p {
+		padding-left: 28px;
+	}
+	#main_serv ul.main_serv_ul {
+		list-style-type: none;
+		margin: 0px;
+		padding: 0px;
+	}
+	#main_serv ul.main_serv_ul li {
+		background-image: url(#{$images-path}/ui/bullet.png);
+		background-repeat: no-repeat;
+		background-position: 0 .2em;
+		padding-left: 13px;
+		padding-bottom: 17px;
+	}
+
+#main_t-about {
+	position: absolute;
+	left: 514px;
+	top: 54px;
+}
+#main_aboutus {
+	position: absolute;
+	left: 514px;
+	top: 132px;
+	height: 215px;
+	width: 381px;
+}
+#main_t-work {
+	position: absolute;
+	left: 86px;
+	top: 347px;
+}
+#main_work {
+	background-image: url(#{$images-path}/ui/frame_i-palit.jpg);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	position: absolute;
+	left: 86px;
+	top: 422px;
+	height: 184px;
+	width: 344px;
+}
+#main_t-contacts {
+	position: absolute;
+	left: 514px;
+	top: 346px;
+}
+#main_contacts {
+	position: absolute;
+	left: 497px;
+	top: 422px;
+	height: 181px;
+	width: 169px;
+}
+#main_contacts_text {
+	position: absolute;
+	left: 678px;
+	top: 417px;
+	height: 184px;
+	width: 264px;
+	line-height: 21pt;
+}
+.main_contacts_phone {
+	font-weight: bold;
+	font-size:16px;
+	color: #4d9d6e;
+}
+.secondp {
+	padding-left: 36px;
+}
+#main_t-guestb {
+	position: absolute;
+	left: 220px;
+	top: 658px;
+}
+#main_guestb {
+	position: absolute;
+	left: 220px;
+	top: 733px;
+	width: 457px;
+	text-align: center;
+}
