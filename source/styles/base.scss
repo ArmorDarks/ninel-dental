@@ -248,3 +248,6 @@ ul.footer_counters {
     -moz-opacity: 1.0;       /* mozilla, netscape */
     opacity: 1.0;           /* fx, safari, opera */
   }
+
+// Helping selector for emails obfuscation
+.drop-element { display: none; }

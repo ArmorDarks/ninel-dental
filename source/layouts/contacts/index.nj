@@ -42,7 +42,9 @@
 		<br>
 		<h3>Email:&nbsp;</h3>
 		<p style="padding-left: 60px;">
-			<a href="/index.php/contacts/mail">написать нам</a>
+			<a href='mailto:{{ company.email[0][0] }}|ThatShould+nt.BeHere|&#64;|ThatShould+nt.BeHere|{{ company.email[0][1] }}' onmouseover="this.href=this.href.replace(/\|ThatShould\+nt\.BeHere\|/g,'');">
+				{{ company.email[0][0] }}<span class="drop-element">|This+Shouldn't.BeHere|</span>&#64;<span class="drop-element">|SameForThisPart|</span>{{ company.email[0][1] }}
+			</a>
 		</p>
 		<p>&nbsp;</p>
 		<h3>Как нас найти:</h3>
