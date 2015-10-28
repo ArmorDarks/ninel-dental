@@ -1,50 +1,123 @@
 ---
-main:
-  name: Главная
-  href: /
+home:
+  pageTitle:       Главная
+  breadcrumbTitle: Главная
+  contentTitle:    Главная
+  menuTitle:       Главная
+  metaDesc:        Главная
+  href:            /
 
 services:
-  name: Услуги
+  pageTitle:       Услуги
+  breadcrumbTitle: Услуги
+  contentTitle:    Услуги
+  menuTitle:       Услуги
+  metaDesc:        Услуги
   sub:
     restoration:
-      name: Художественная реставрация зубов
+      pageTitle:       Художественная реставрация зубов
+      breadcrumbTitle: Художественная реставрация зубов
+      contentTitle:    Художественная реставрация зубов
+      menuTitle:       Художественная реставрация зубов
+      metaDesc:        Художественная реставрация зубов
       descShort: восстановление формы, цвета и функций зуба
     restoration-of-teeth-wear:
-      name: Восстановление стёртых зубов при патологической стираемости
+      pageTitle:       Восстановление стёртых зубов при патологической стираемости
+      breadcrumbTitle: Восстановление стёртых зубов при патологической стираемости
+      contentTitle:    Восстановление стёртых зубов при патологической стираемости
+      menuTitle:       Восстановление стёртых зубов при патологической стираемости
+      metaDesc:        Восстановление стёртых зубов при патологической стираемости
       descShort: комплексная реабилитация зубочелюстной системы
     replacement-of-dental-crows:
-      name: Замена искусственных коронок прямой художественной реставрацией
+      pageTitle:       Замена искусственных коронок прямой художественной реставрацией
+      breadcrumbTitle: Замена искусственных коронок прямой художественной реставрацией
+      contentTitle:    Замена искусственных коронок прямой художественной реставрацией
+      menuTitle:       Замена искусственных коронок прямой художественной реставрацией
+      metaDesc:        Замена искусственных коронок прямой художественной реставрацией
       descShort: полное восстановление зуба после коронки
     endodontics:
-      name: Эндодонтическое лечение
+      pageTitle:       Эндодонтическое лечение
+      breadcrumbTitle: Эндодонтическое лечение
+      contentTitle:    Эндодонтическое лечение
+      menuTitle:       Эндодонтическое лечение
+      metaDesc:        Эндодонтическое лечение
       descShort: лечение системы корневых каналов
     bridge:
-      name: Адгезивный мостовидный протез
+      pageTitle:       Адгезивный мостовидный протез
+      breadcrumbTitle: Адгезивный мостовидный протез
+      contentTitle:    Адгезивный мостовидный протез
+      menuTitle:       Адгезивный мостовидный протез
+      metaDesc:        Адгезивный мостовидный протез
       descShort: восстановление утраченных зубов без хирургического вмешательства
     vector-therapy:
-      name: Vector-терапия
+      pageTitle:       Vector-терапия
+      breadcrumbTitle: Vector-терапия
+      contentTitle:    Vector-терапия
+      menuTitle:       Vector-терапия
+      metaDesc:        Vector-терапия
       descShort: ультразвуковая очистка пародонтальных карманов, антисептическая обработка и полировка поверхности
     professional-cleaning:
-      name: Профессиональная гигиена полости рта
+      pageTitle:       Профессиональная гигиена полости рта
+      breadcrumbTitle: Профессиональная гигиена полости рта
+      contentTitle:    Профессиональная гигиена полости рта
+      menuTitle:       Профессиональная гигиена полости рта
+      metaDesc:        Профессиональная гигиена полости рта
       descShort: удаление налёта и зубного камня, а также полировка зуба
 
 about:
-  name: О нас
+  pageTitle:       О нас
+  breadcrumbTitle: О нас
+  contentTitle:    О нас
+  menuTitle:       О нас
+  metaDesc:        О нас
   sub:
     licenses:
-      name: Лицензия и дипломы
+      pageTitle:       Лицензия и дипломы
+      breadcrumbTitle: Лицензия и дипломы
+      contentTitle:    Лицензия и дипломы
+      menuTitle:       Лицензия и дипломы
+      metaDesc:        Лицензия и дипломы
 
 work:
-  name: Наша работа
+  pageTitle:       Наша работа
+  breadcrumbTitle: Наша работа
+  contentTitle:    Наша работа
+  menuTitle:       Наша работа
+  metaDesc:        Наша работа
 
 contacts:
-  name: Контакты
+  pageTitle:       Контакты
+  breadcrumbTitle: Контакты
+  contentTitle:    Контакты
+  menuTitle:       Контакты
+  metaDesc:        Контакты
   # sub:
   #   email:
-  #     name: Написать нам
+  #     pageTitle:       Написать нам
+  #     breadcrumbTitle: Написать нам
+  #     contentTitle:    Написать нам
+  #     menuTitle:       Написать нам
+  #     metaDesc:        Написать нам
 
 feedback:
-  name: Отзывы
+  pageTitle:       Отзывы
+  breadcrumbTitle: Отзывы
+  contentTitle:    Отзывы
+  menuTitle:       Отзывы
+  metaDesc:        Отзывы
 
 # sitemap:
-#   name: Карта сайта
+#   pageTitle:       Карта сайта
+#   breadcrumbTitle: Карта сайта
+#   contentTitle:    Карта сайта
+#   menuTitle:       Карта сайта
+#   metaDesc:        Карта сайта
+
+404:
+  pageTitle:       404 — страница не найдена
+  breadcrumbTitle: 404
+  contentTitle:    false
+  menuTitle:       404
+  metaDesc:        404 — страница не найдена
+  href:            /404.html
+  display:         false

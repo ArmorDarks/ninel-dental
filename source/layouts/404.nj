@@ -1,27 +1,11 @@
-{% extends "_layout.nj" %}
+{% extends '_main.nj' %}
 
 
 {# --------- #}
-{% set pageTitle         = "404 — страница не найдена" %}
-{% set pageMetaDesc      = "404 — страница не найдена" %}
-{% set pageContentTitle  = false %}
+{% set breadcrumb     = ['404'] %}
 
-{% set pageClass         = "l-404" %}
-{% set customSiteWrapper = false %}
-
-{% set showBreadcrumb    = false %}
-{% set breadcrumb        = ["404"] %}
-
-{% set blocknav          = false %}
-{% set subnav            = false %}
+{% set pageClass      = 'l-404' %}
 {# --------- #}
-
-
-{% block hero %}
-
-
-
-{% endblock %}
 
 
 {% block main %}

@@ -1,12 +1,13 @@
 module.exports = (grunt) ->
   'use strict'
 
+  _ = require('lodash')
   # Track execution time
-  require('time-grunt') grunt;
-
+  require('time-grunt') grunt
   # Load grunt tasks automatically
   require('jit-grunt') grunt,
     nunjucks: 'grunt-nunjucks-2-html'
+    scsslint: 'grunt-scss-lint'
     sprite: 'grunt-spritesmith'
 
   # Define the configuration for all the tasks
@@ -18,9 +19,15 @@ module.exports = (grunt) ->
       tinypng:
         api:
           key: process.env.TINYPNG_API_KEY
+      github:
+        api:
+          key: process.env.GITHUB_API_KEY
 
     # Specify your source and build directory structure
     path:
+      tasks:
+        root: 'tasks'
+
       source:
         root: 'source'
         data: '<%= path.source.root %>/data'
@@ -28,6 +35,7 @@ module.exports = (grunt) ->
         icons: '<%= path.source.root %>/icons'
         images: '<%= path.source.root %>/images'
         styles: '<%= path.source.root %>/styles'
+        locales: '<%= path.source.root %>/locales'
         layouts: '<%= path.source.root %>/layouts'
         scripts: '<%= path.source.root %>/scripts'
         sprites: '<%= path.source.root %>/sprites'
@@ -50,7 +58,7 @@ module.exports = (grunt) ->
     # Specify files
     file:
       source:
-        script: '<%= path.source.scripts %>/main.js'
+        script: '<%= path.source.scripts %>/main'
         style: '<%= path.source.styles %>/style.scss'
 
       build:
@@ -66,24 +74,39 @@ module.exports = (grunt) ->
           compiled: '<%= path.build.sprites %>/sprite.png'
           hash: '<%= path.build.sprites %>/hash.json'
 
+    i18n:
+      locales: [
+          locale: 'ru-RU'
+          url: 'ru'
+        ,
+          locale: 'en-US'
+          url: 'en'
+      ]
+      baseLocale: 'ru-RU'
+
     # Specify data
     data:
       path:
-        # @note Stripping `build/` part from path
+        # Remove `build/` part from path
         fonts: '<%= grunt.template.process(path.build.fonts).replace(path.build.root + \'/\', \'\') %>'
         images: '<%= grunt.template.process(path.build.images).replace(path.build.root + \'/\', \'\') %>'
         styles: '<%= grunt.template.process(path.build.styles).replace(path.build.root + \'/\', \'\') %>'
         scripts: '<%= grunt.template.process(path.build.scripts).replace(path.build.root + \'/\', \'\') %>'
         thumbnails: '<%= grunt.template.process(path.build.thumbnails).replace(path.build.root + \'/\', \'\') %>'
+        source: '<%= path.source %>'
       site:
-        lang: 'en'
         name: '<%= pkg.name %>'
-        title: '<%= pkg.title %>'
+        desc: '<%= pkg.description %>'
+        homepage: '<%= pkg.homepage %>'
+        twitter: ''
         version: '<%= pkg.version %>'
+        pages: grunt.file.readYAML 'source/data/pages.yml'
       company: grunt.file.readYAML 'source/data/company.yml'
-      pages: grunt.file.readYAML 'source/data/pages.yml'
       data:
         currentYear: new Date().getFullYear()
+
+  # @todo Workaround to get list of locales as {array} instead of {string}
+  grunt.config.set 'i18n.locales.list', _.pluck(grunt.config('i18n.locales'), 'locale')
 
   grunt.loadTasks 'tasks'
 
@@ -92,7 +115,6 @@ module.exports = (grunt) ->
   ###
   grunt.registerTask 'copy:build', [
     'copy:boilerplates'
-    'copy:scripts'
     'copy:fonts'
     'copy:images'
   ]
@@ -101,15 +123,16 @@ module.exports = (grunt) ->
   Default task
   ###
   grunt.registerTask 'default', [
-    'clean'
+    'clean:build'
     'copy:build'
-    # 'duojs'
     'nunjucks'
-    # 'sprite'
-    # 'webfont'
+    'sprite'
+    'webfont'
     'sass'
     'autoprefixer'
-    # 'responsive_images:thumbnails'
+    'shell:jspm_install'
+    'shell:jspm_build'
+    'responsive_images:thumbnails'
     'browserSync'
     'watch'
   ]
@@ -118,32 +141,33 @@ module.exports = (grunt) ->
   A task for your production environment
   ###
   grunt.registerTask 'build', [
-    'clean:build'
+    'clean'
     'copy:build'
-    # 'duojs:build'
-    'nunjucks:build'
-    # 'sprite:build'
-    # 'webfont:build'
+    'nunjucks'
+    'sprite:build'
+    'webfont:build'
     'sass:build'
     'autoprefixer:build'
     'uncss:build'
     'csso:build'
-    'uglify:build'
-    'clean:styles'
-    'clean:temp'
     'processhtml:build'
+    'shell'
+    'uglify:build'
     'htmlmin:build'
-    # 'responsive_images:thumbnails'
-    # 'tinypng:build'
+    'responsive_images:thumbnails'
+    'tinypng:build'
+    'clean:styles'
+    'clean:scripts'
     'cacheBust:build'
+    'sitemap_xml:build'
     'size_report:build'
   ]
 
   ###
-  A task for scss files linting
+  A task for scss linting
   ###
-  grunt.registerTask 'lint:sass', [
-    'scsslint'
+  grunt.registerTask 'test', [
+    'scsslint:build'
   ]
 
   ###

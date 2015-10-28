@@ -9,16 +9,31 @@ module.exports = ->
       files:
         src: [
           '<%= path.build.root %>/*'
-          '<%= path.temp.root %>/*'
         ]
     temp:
       files:
         src: [
           '<%= path.temp.root %>/*'
         ]
-    styles:
-      files:
+    scripts:
+      files: [
+        expand: true
+        cwd: '<%= path.build.scripts %>'
         src: [
-          '<%= path.build.styles %>/*'
-          '!<%= file.build.style.min %>'
+          '{,**/}*.*',
+          '!{,**/}*.min.js',
         ]
+        dest: '<%= path.build.styles %>'
+      ]
+    styles:
+      files: [
+        expand: true
+        cwd: '<%= path.build.styles %>'
+        src: [
+          '{,**/}*.*',
+          # @todo We have to specify `*.prefixed.css` because of https://github.com/LotusTM/Kotsu/issues/43
+          '!{,**/}*.prefixed.css',
+          '!{,**/}*.min.css',
+        ]
+        dest: '<%= path.build.styles %>'
+      ]

@@ -1,15 +1,8 @@
-{% extends "_layout.nj" %}
+{% extends "_main.nj" %}
 
 
 {# --------- #}
-{% set pageTitle         = getPage(pages, page.breadcrumb).name %}
-{% set pageMetaDesc      = getPage(pages, page.breadcrumb).metaDesc %}
-{% set pageContentTitle  = pageTitle %}
-
 {% set pageClass         = "l-other" %}
-
-{% set showBreadcrumb    = true %}
-{% set breadcrumb        = page.breadcrumb %}
 {# --------- #}
 
 
