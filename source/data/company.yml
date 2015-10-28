@@ -48,7 +48,7 @@ phone:
     phone: [921, 58, 88]
     mobile: true
 email:
-  - [null, null]
+  - [info, ninel.pl.ua]
 worktime:
   -
     days: [1, 2, 3, 4, 5, 6]
