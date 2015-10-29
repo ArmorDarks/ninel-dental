@@ -40,7 +40,7 @@
     {% if content.display != false %}
 
       <li class="{{ "current active" if active }}">
-        <a href="{{ href }}">
+        <a href="{{ localeDir() }}{{ href }}">
           {{ content.breadcrumbTitle }}
         </a>
 
@@ -81,7 +81,7 @@
 
               {% if content.display != false %}
                 <li class="{{ "current active" if active }}">
-                  <a href="{{ href }}">
+                  <a href="{{ localeDir() }}{{ href }}">
                     {{ conntent.breadcrumbTitle }}
                   </a>
                 </li>
