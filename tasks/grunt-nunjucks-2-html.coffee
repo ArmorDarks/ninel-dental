@@ -255,49 +255,6 @@ module.exports = (grunt) ->
             _result = _.get(pages, _subbedPath)
             if _result then _result else grunt.log.error('[getPage] can\'t find requested `' + _subbedPath + '` inside specified object')
 
-          getPage = (path, pages = taskConfig.data.defaultPages, subName = 'sub') ->
-              _subbedPath = _.clone(path)
-              _i = 1
-              _position = 1
-              while _i < path.length
-                _position = if (_i > 1) then _position + 2 else _position
-                _subbedPath.splice(_position, 0, subName)
-                _i++
-              _result = _.get(pages, _subbedPath)
-              if _result then _result else grunt.log.error('[getPage] can\'t find requested `' + _subbedPath + '` inside specified object')
-
-          getMenu = (object, indent = 0, levelToDisplay = 'all') ->
-            _.forEach object, (prop, key) =>
-              if prop.display != false
-                if levelToDisplay == indent or levelToDisplay == 'all'
-                  console.log new Array(indent + 1).join('|--') + key
-              if object[key].hasOwnProperty('sub')
-                getMenu(object[key].sub, indent + 1, levelToDisplay)
-
-
-
-          env.addGlobal 'getMenu', (level, pages = taskConfig.data.defaultPages, subName = 'sub') ->
-            1
-
-          printObject = (o, indent) =>
-              out = '';
-              if typeof indent == 'undefined'
-                  indent = 0;
-              for p of o
-                if o.hasOwnProperty(p)
-                    val = o[p];
-                    out += new Array(2 * indent + 1).join('-') + p + ': ';
-                    if typeof val == 'object'
-                      out += '{\n' + printObject(val, indent + 1) + new Array(2 * indent + 1).join('-') + '}';
-                    else
-                      out += '"' + val + '"';
-                    out += ',\n';
-              return console.log out;
-
-          # getMenu(taskConfig.data.defaultPages)
-          getMenu(getPage(['услуги']).sub, 0, 1)
-          # printObject(taskConfig.data.defaultPages)
-
           ###*
            * Expose `moment.js` to Nunjucks' for parsing, validation, manipulation, and displaying dates
            * @tutorial http://momentjs.com/docs/
