@@ -14,7 +14,7 @@
 
   <div id="cont_main-desc">
     <div id="main-h_photo"><img src="/{{ path.images }}/ui/fheader_photo.png" width="128" height="157" alt="Photo" longdesc="Photo of Ninel" /></div>
-    <div id="main-h_photo-text">Главный врач<br />
+    <div id="main-h_photo-text">Главный врач<br>
       Дубровина Нинель Александровна</div>
     <div id="main-h_text">
       <p style="margin-top:0px;padding-top:0px"><strong>Клиника художественной реставрации зубов «Нинель»</strong> находится в самом центре стоматологической столицы – городе Полтава.</p>
@@ -42,9 +42,9 @@
       <p><a href="{{ localeDir() }}/services">узнать больше...</a></p>
     </div>
     <div id="main_t-about"><a href="{{ localeDir() }}/about"><img src="/{{ path.images }}/ui/frame_t-we.png" width="276" height="65" alt="About Us" /></a></div>
-    <div id="main_aboutus"> Узнать больше о клинике, ее персонале, сертефикатах,<br />
-      а так же достижениях можно <a href="{{ localeDir() }}/about">здесь...</a> <br />
-      <br />
+    <div id="main_aboutus"> Узнать больше о клинике, ее персонале, сертефикатах,<br>
+      а так же достижениях можно <a href="{{ localeDir() }}/about">здесь...</a> <br>
+      <br>
       <table border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td width="255"><div align="right"><a href="{{ localeDir() }}/about/licenses"><img src="/{{ path.images }}/ui/frame_i-dipl.jpg" width="206" height="143" alt="View diploms" /></a></div></td>
@@ -53,14 +53,14 @@
       </table>
     </div>
     <div id="main_t-work"><a href="{{ localeDir() }}/work"><img src="/{{ path.images }}/ui/frame_t-work.png" width="339" height="65" alt="Our work" /></a></div>
-    <div id="main_work"><a href="{{ localeDir() }}/work">Здесь</a> Вы можете ознакомиться с некоторыми из<br />
+    <div id="main_work"><a href="{{ localeDir() }}/work">Здесь</a> Вы можете ознакомиться с некоторыми из<br>
       наших работ</div>
     <div id="main_t-contacts"><a href="{{ localeDir() }}/contacts"><img src="/{{ path.images }}/ui/frame_t-contacts.png" width="298" height="66" alt="Our contacts" /></a></div>
     <div id="main_contacts"><a href="{{ localeDir() }}/contacts"><img src="/{{ path.images }}/ui/frame_i-apl.jpg" width="169" height="181" alt="View how to go to us" /></a></div>
-    <div id="main_contacts_text">Украина, г. Полтава<br />
+    <div id="main_contacts_text">Украина, г. Полтава<br>
       ул. Конституции, 3
-      <p>тел.: <span class="main_contacts_phone">+38 (0532) 69-38-88</span><br />
-        <span class="main_contacts_phone secondp">+38 (0532) 69-18-88</span><br />
+      <p>тел.: <span class="main_contacts_phone">+38 (0532) 69-38-88</span><br>
+        <span class="main_contacts_phone secondp">+38 (0532) 69-18-88</span><br>
         моб.: <span class="main_contacts_phone">+38 (068) 921-58-88</span></p>
       <p>e-mail: <a href="{{ localeDir() }}/contacts">написать нам</a></p>
     </div>
