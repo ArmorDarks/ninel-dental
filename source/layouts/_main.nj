@@ -8,28 +8,57 @@
   <!-- ============= -->
 
   <div id="header_cont">
-    <div id="header_chair"><img src="/{{ path.images }}/ui/header_left_dentalc.png" width="149" height="122" alt="dental chair" /></div>
-    <div id="header_ninel"><a href="{{ localeDir() }}/" title="Клиника художественной реставрации зубов «Нинель»"><img src="/{{ path.images }}/ui/header_ninel.png" width="549" height="157" alt="Ninel Dental" /></a></div>
-    <div id="header_mint"><img src="/{{ path.images }}/ui/header_right_mintp.png" width="46" height="73" alt="mint" /></div>
-    <div id="header_phone"> +38 0532 69-38-88<br>
-      +38 068 921-58-88 </div>
-    <div id="header_phone-b"><img src="/{{ path.images }}/ui/header_right_phones_bot.png" width="201" height="42" alt="img" /></div>
+
+    <div id="header_chair">
+      <img src="/{{ path.images }}/ui/header_left_dentalc.png" width="149" height="122" alt="dental chair" />
+    </div>
+
+    <div id="header_ninel">
+      <a href="{{ localeDir() }}/" title="Клиника художественной реставрации зубов «Нинель»">
+        <img src="/{{ path.images }}/ui/header_ninel.png" width="549" height="157" alt="Ninel Dental" />
+      </a>
+    </div>
+
+    <div id="header_mint">
+      <img src="/{{ path.images }}/ui/header_right_mintp.png" width="46" height="73" alt="mint" />
+    </div>
+
+    <div id="header_phone">
+      +38 0532 69-38-88<br>
+      +38 068 921-58-88
+    </div>
+
+    <div id="header_phone-b">
+      <img src="/{{ path.images }}/ui/header_right_phones_bot.png" width="201" height="42" alt="img" />
+    </div>
+
     <div id="header_lang">
-      <div id="header_lang_bot"><img src="/{{ path.images }}/ui/lang_bg-b.png" width="80" height="7" alt="img" /></div>
+
+      <div id="header_lang_bot">
+        <img src="/{{ path.images }}/ui/lang_bg-b.png" width="80" height="7" alt="img" />
+      </div>
+
       <table width="60" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
-          <td width="30"><a href="{{ localeDir('ru-UA') }}/{{ page.url }}"><img src="/{{ path.images }}/ui/lang_ru.png" width="30" height="38" alt="RU Language" /></a></td>
-          <td width="30"><a href="{{ localeDir('en-US') }}/{{ page.url }}"><img src="/{{ path.images }}/ui/lang_eng.png" width="30" height="38" alt="ENG Language" /></a></td>
+          <td width="30">
+            <a href="{{ localeDir('ru-UA') }}/{{ page.url }}">
+              <img src="/{{ path.images }}/ui/lang_ru.png" width="30" height="38" alt="RU Language" />
+            </a>
+          </td>
+          <td width="30">
+            <a href="{{ localeDir('en-US') }}/{{ page.url }}">
+              <img src="/{{ path.images }}/ui/lang_eng.png" width="30" height="38" alt="ENG Language" />
+            </a>
+          </td>
         </tr>
       </table>
+
     </div>
+
   </div>
-
-
 
   <!-- Site's content -->
   <!-- ============== -->
-
 
   {% if pageClass == "l-index" %}
 
@@ -38,86 +67,84 @@
   {% else %}
 
     <div id="cont">
+
       <div id="main_cont_menu">
         {# <jdoc:include type="modules" name="main_search" /> #}
-        <ul class="menu">
-          {{ components.menu(showSub = true) }}
-        </ul>
+        <ul class="menu">{{ components.menu(showSub = true) }}</ul>
       </div>
+
       <div id="main_cont_cont">
-        {##
-         # Display breadcrumb unless it set to `false`
-         #
-         # @todo Better docs
-         # @todo Needs better way of aliases handling
-         #}
 
         {% if showBreadcrumb %}
-
           {{ components.breadcrumb() }}
-
         {% endif %}
 
-      {% if pageContentTitle %}
+        {% if pageContentTitle %}
+          <h1 class="">{{ pageContentTitle }}</h1>
+        {% endif %}
 
-        <h1 class="">{{ pageContentTitle }}</h1>
-
-      {% endif %}
         <p></p>
+
         {% block main %}{% endblock %}
+
       </div>
+
     </div>
 
   {% endif %}
-
-
 
   <!-- Site's footer -->
   <!-- ============= -->
 
   <!--/noindex-->
   <div id="footer_links">
-    <ul class="menu_footer">
-      {{ components.menu(showSub = false) }}
-    </ul>
+    <ul class="menu_footer">{{ components.menu(showSub = false) }}</ul>
   </div>
+
   <table class="footer_cont" width="0" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td><img src="/{{ path.images }}/ui/footer_bg-l.png" width="5" height="64" alt="img" /></td>
-      <td class="footer_centr">© {{ company.nameFull }}</td>
-      <td class="footer_centr">
-      <ul class="footer_counters">
-        <li>
-          <!-- begin of Top100 code -->
-          <script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?2605588"></script>
-          <noscript>
-            <a href="http://top100.rambler.ru/navi/2605588/">
-              <img src="http://counter.rambler.ru/top100.cnt?2605588" alt="Rambler's Top100" border="0" />
-            </a>
 
-          </noscript>
-          <!-- end of Top100 code -->
-        </li>
-        <li>
-          <script type="text/javascript">//<![CDATA[
+      <td>
+        <img src="/{{ path.images }}/ui/footer_bg-l.png" width="5" height="64" alt="img" />
+      </td>
+
+      <td class="footer_centr">© {{ company.nameFull }}</td>
+
+      <td class="footer_centr">
+        <ul class="footer_counters">
+
+          <li>
+            <!-- begin of Top100 code -->
+            <script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?2605588"></script>
+            <noscript>
+              <a href="http://top100.rambler.ru/navi/2605588/">
+                <img src="http://counter.rambler.ru/top100.cnt?2605588" alt="Rambler's Top100" border="0" />
+              </a>
+            </noscript>
+            <!-- end of Top100 code -->
+          </li>
+
+          <li>
+            <script type="text/javascript">//<![CDATA[
       var a='';js=10;d=document;
       try{a+=';r='+escape(d.referrer);}catch(e){}try{a+=';j='+navigator.javaEnabled();js=11;}catch(e){}
       try{s=screen;a+=';s='+s.width+'*'+s.height;a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth);js=12;}catch(e){}
       try{if(typeof((new Array).push('t'))==="number")js=13;}catch(e){}
       try{d.write('<a href="http://top.mail.ru/jump?from=2131203"><img src="http://d5.c8.b0.a2.top.mail.ru/counter?id=2131203;t=51;js='+js+
       a+';rand='+Math.random()+'" alt="Рейтинг@Mail.ru" style="border:0;" height="31" width="88" \/><\/a>');}catch(e){}//]]></script>
-          <noscript>
-            <p>
-              <a href="http://top.mail.ru/jump?from=2131203">
-                <img src="http://d5.c8.b0.a2.top.mail.ru/counter?js=na;id=2131203;t=51"
+            <noscript>
+              <p>
+                <a href="http://top.mail.ru/jump?from=2131203">
+                  <img src="http://d5.c8.b0.a2.top.mail.ru/counter?js=na;id=2131203;t=51"
       style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" />
-              </a>
-            </p>
-          </noscript>
-        </li>
-        <li>
-          <!--LiveInternet counter-->
-          <script type="text/javascript"><!--
+                </a>
+              </p>
+            </noscript>
+          </li>
+
+          <li>
+            <!--LiveInternet counter-->
+            <script type="text/javascript"><!--
       document.write("<a href='http://www.liveinternet.ru/click' "+
       "target=_blank><img src='//counter.yadro.ru/hit?t17.6;r"+
       escape(document.referrer)+((typeof(screen)=="undefined")?"":
@@ -128,13 +155,19 @@
       " часа, посетителей за 24 часа и за сегодня' "+
       "border='0' width='88' height='31'><\/a>")
       //--></script>
-          <!--/LiveInternet-->
-        </li>
-      </ul>
+            <!--/LiveInternet-->
+          </li>
+
+        </ul>
       </td>
-      <td><img src="/{{ path.images }}/ui/footer_bg-r.png" width="5" height="64" alt="img" /></td>
+
+      <td>
+        <img src="/{{ path.images }}/ui/footer_bg-r.png" width="5" height="64" alt="img" />
+      </td>
+
     </tr>
   </table>
+
   <div id="footer_closer"></div>
   <!--/noindex-->
 
