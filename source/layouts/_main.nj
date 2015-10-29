@@ -14,7 +14,7 @@
     </div>
 
     <div id="header_ninel">
-      <a href="{{ localeDir() }}/" title="Клиника художественной реставрации зубов «Нинель»">
+      <a href="{{ localeDir() }}/" title="{{ gettext('Клиника художественной реставрации зубов «Нинель»') }}">
         <img src="/{{ path.images }}/ui/header_ninel.png" width="549" height="157" alt="Ninel Dental" />
       </a>
     </div>
@@ -42,12 +42,12 @@
         <tr>
           <td width="30">
             <a href="{{ localeDir('ru-UA') }}/{{ page.url }}">
-              <img src="/{{ path.images }}/ui/lang_ru.png" width="30" height="38" alt="RU Language" />
+              <img src="/{{ path.images }}/ui/lang_ru.png" width="30" height="38" title="{{ gettext('Русский язык') }}" alt="{{ gettext('Русский язык') }}" />
             </a>
           </td>
           <td width="30">
             <a href="{{ localeDir('en-US') }}/{{ page.url }}">
-              <img src="/{{ path.images }}/ui/lang_eng.png" width="30" height="38" alt="ENG Language" />
+              <img src="/{{ path.images }}/ui/lang_eng.png" width="30" height="38" title="{{ gettext('Английский язык') }}" alt="{{ gettext('Английский язык') }}" />
             </a>
           </td>
         </tr>
@@ -98,7 +98,9 @@
 
   <!--/noindex-->
   <div id="footer_links">
-    <ul class="menu_footer">{{ components.menu(showSub = false) }}</ul>
+    <ul class="menu_footer">
+      {{ components.menu(showSub = false) }}
+    </ul>
   </div>
 
   <table class="footer_cont" width="0" border="0" cellspacing="0" cellpadding="0">
