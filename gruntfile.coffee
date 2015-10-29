@@ -76,13 +76,13 @@ module.exports = (grunt) ->
 
     i18n:
       locales: [
-          locale: 'ru-RU'
+          locale: 'ru-UA'
           url: 'ru'
         ,
           locale: 'en-US'
           url: 'en'
       ]
-      baseLocale: 'ru-RU'
+      baseLocale: 'ru-UA'
 
     # Specify data
     data:
