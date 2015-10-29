@@ -9,7 +9,7 @@
 
   <div id="header_cont">
     <div id="header_chair"><img src="/{{ path.images }}/ui/header_left_dentalc.png" width="149" height="122" alt="dental chair" /></div>
-    <div id="header_ninel"><a href="/" title="Клиника художественной реставрации зубов «Нинель»"><img src="/{{ path.images }}/ui/header_ninel.png" width="549" height="157" alt="Ninel Dental" /></a></div>
+    <div id="header_ninel"><a href="{{ localeDir() }}/" title="Клиника художественной реставрации зубов «Нинель»"><img src="/{{ path.images }}/ui/header_ninel.png" width="549" height="157" alt="Ninel Dental" /></a></div>
     <div id="header_mint"><img src="/{{ path.images }}/ui/header_right_mintp.png" width="46" height="73" alt="mint" /></div>
     <div id="header_phone"> +38 0532 69-38-88<br />
       +38 068 921-58-88 </div>
