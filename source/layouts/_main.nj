@@ -61,11 +61,6 @@
   <!-- ============== -->
 
   {% if pageClass == "l-index" %}
-
-    {% block main %}{% endblock %}
-
-  {% else %}
-
     <div id="cont">
 
       <div id="main_cont_menu">
@@ -84,9 +79,11 @@
         {% endif %}
 
         <p></p>
+  {% endif %}
 
         {% block main %}{% endblock %}
 
+  {% if pageClass == "l-index" %}
       </div>
 
     </div>
