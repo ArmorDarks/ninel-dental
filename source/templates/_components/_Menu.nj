@@ -1,0 +1,100 @@
+{##
+ # Generates menu entries based on provided object
+ #
+ # @todo Better docs
+ # @todo Better code
+ #
+ # @exmaple:
+
+  ...
+
+ #
+ #}
+
+ {% macro Menu(menu = site.pages, breadcrumb = page.breadcrumb, showSub = true) %}
+
+  {% set active = "" %}
+
+  {% for slug, content in menu %}
+
+    {% if content.href != undefined %}
+      {% set href = content.href %}
+      {% set hrefParent = content.href %}
+    {% else %}
+      {% set href = "/" + slug %}
+      {% set hrefParent = "/" + slug %}
+    {% endif %}
+
+    {% for crumb in breadcrumb %}
+
+      {% if loop.index == 1 %}
+        {% if crumb == slug %}
+          {% set active = true %}
+        {% else %}
+          {% set active = false %}
+        {% endif %}
+      {% endif %}
+
+    {% endfor %}
+
+    {% if content.display != false %}
+
+      <li class="{{ "current active" if active }}">
+        <a href="{{ localeDir() }}{{ href }}">
+          {{ content.breadcrumbTitle }}
+        </a>
+
+        {% if content.sub and showSub %}
+          <ul>
+
+            {% for subSlug, subContent in content.sub %}
+
+              {% if subContent.href != undefined %}
+                {# {% set href = hrefReserv + content.href %}
+                {% set hrefReserv2 = hrefReserv + content.href %} #}
+                {% set href = subContent.href %}
+              {% else %}
+                {% set href = hrefParent + "/" + subSlug %}
+                {% set hrefParent2 = hrefParent + "/" + subSlug %}
+              {% endif %}
+
+              {% set slug = subSlug %}
+              {% set conntent = subContent %}
+
+              {% if crumb == slug %}
+                {% set active = true %}
+              {% else %}
+                {% set active = false %}
+              {% endif %}
+
+              {% for crumb in breadcrumb %}
+
+                {% if loop.index == 2 %}
+                  {% if crumb == slug %}
+                    {% set active = true %}
+                  {% else %}
+                    {% set active = false %}
+                  {% endif %}
+                {% endif %}
+
+              {% endfor %}
+
+              {% if content.display != false %}
+                <li class="{{ "current active" if active }}">
+                  <a href="{{ localeDir() }}{{ href }}">
+                    {{ conntent.breadcrumbTitle }}
+                  </a>
+                </li>
+            {% endif %}{# /content.display != false #}
+
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+      </li>
+
+    {% endif %}{# /content.display != false #}
+
+  {% endfor %}
+
+{% endmacro %}

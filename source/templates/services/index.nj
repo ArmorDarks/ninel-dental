@@ -1,0 +1,28 @@
+{% extends '_layouts/_main.nj' %}
+
+
+{# --------- #}
+{{ config('page', {
+  class          : 'l-other'
+}) }}
+{# --------- #}
+
+
+{% block main %}
+
+	<p>Клиника художественной реставрации «Нинель» предоставляет следующие услуги:</p>
+
+	<div id="other_serv">
+
+		<ul class="level_0">
+			{% for slug, entry in getPage(page.breadcrumb).sub %}
+			<li>
+				<a href="{{ slug }}">{{ entry.pageTitle }}</a>
+				<span class="ul_under">{{ entry.descShort }}</span>
+			</li>
+			{% endfor %}
+		</ul>
+
+	</div>
+
+{% endblock %}

@@ -1,11 +1,11 @@
-{% extends '_main.nj' %}
+{% extends '_layouts/_main.nj' %}
 
 
 {# --------- #}
-{% set breadcrumb     = ['home'] %}
-
-{% set pageClass      = 'l-index' %}
-{% set showBreadcrumb = false %}
+{{ config('page', {
+  class          : 'p-index',
+  showBreadcrumb : false
+}) }}
 {# --------- #}
 
 

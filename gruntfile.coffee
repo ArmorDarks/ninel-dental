@@ -34,12 +34,12 @@ module.exports = (grunt) ->
         fonts: '<%= path.source.root %>/fonts'
         icons: '<%= path.source.root %>/icons'
         images: '<%= path.source.root %>/images'
-        styles: '<%= path.source.root %>/styles'
         locales: '<%= path.source.root %>/locales'
-        layouts: '<%= path.source.root %>/layouts'
         scripts: '<%= path.source.root %>/scripts'
         sprites: '<%= path.source.root %>/sprites'
-        boilerplates: '<%= path.source.root %>/boilerplates'
+        static: '<%= path.source.root %>/static'
+        styles: '<%= path.source.root %>/styles'
+        templates: '<%= path.source.root %>/templates'
 
       temp:
         root: 'temp'
@@ -50,9 +50,9 @@ module.exports = (grunt) ->
         assets: '<%= path.build.root %>/assets'
         fonts: '<%= path.build.assets %>/fonts'
         images: '<%= path.build.assets %>/images'
-        styles: '<%= path.build.assets %>/styles'
         scripts: '<%= path.build.assets %>/scripts'
         sprites: '<%= path.build.assets %>/sprites'
+        styles: '<%= path.build.assets %>/styles'
         thumbnails: '<%= path.build.images %>/thumbnails'
 
     # Specify files
@@ -90,23 +90,24 @@ module.exports = (grunt) ->
         # Remove `build/` part from path
         fonts: '<%= grunt.template.process(path.build.fonts).replace(path.build.root + \'/\', \'\') %>'
         images: '<%= grunt.template.process(path.build.images).replace(path.build.root + \'/\', \'\') %>'
-        styles: '<%= grunt.template.process(path.build.styles).replace(path.build.root + \'/\', \'\') %>'
         scripts: '<%= grunt.template.process(path.build.scripts).replace(path.build.root + \'/\', \'\') %>'
+        styles: '<%= grunt.template.process(path.build.styles).replace(path.build.root + \'/\', \'\') %>'
         thumbnails: '<%= grunt.template.process(path.build.thumbnails).replace(path.build.root + \'/\', \'\') %>'
         source: '<%= path.source %>'
       site:
         name: '<%= pkg.name %>'
         desc: '<%= pkg.description %>'
         homepage: '<%= pkg.homepage %>'
-        twitter: ''
+        twitter: '@LotusTM'
         version: '<%= pkg.version %>'
+        locales: '<%= i18n.locales.list %>'
+        baseLocale: '<%= i18n.baseLocale %>'
         pages: grunt.file.readYAML 'source/data/pages.yml'
-      company: grunt.file.readYAML 'source/data/company.yml'
       data:
         currentYear: new Date().getFullYear()
 
   # @todo Workaround to get list of locales as {array} instead of {string}
-  grunt.config.set 'i18n.locales.list', _.pluck(grunt.config('i18n.locales'), 'locale')
+  grunt.config.set 'i18n.locales.list', _.map(grunt.config('i18n.locales'), 'locale')
 
   grunt.loadTasks 'tasks'
 
@@ -114,7 +115,7 @@ module.exports = (grunt) ->
   Cumulative copy task
   ###
   grunt.registerTask 'copy:build', [
-    'copy:boilerplates'
+    'copy:static'
     'copy:fonts'
     'copy:images'
   ]
@@ -167,7 +168,7 @@ module.exports = (grunt) ->
   A task for scss linting
   ###
   grunt.registerTask 'test', [
-    'scsslint:build'
+    #'scsslint:build'
   ]
 
   ###

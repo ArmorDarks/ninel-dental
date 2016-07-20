@@ -9,9 +9,9 @@ module.exports = ->
       files: ['gruntfile.coffee', 'tasks/*']
       options:
         reload: true
-    boilerplates:
-      files: ['<%= path.source.boilerplates %>/{,**/}*']
-      tasks: ['copy:boilerplates']
+    static:
+      files: ['<%= path.source.static %>/{,**/}*']
+      tasks: ['copy:static']
     data:
       files: ['<%= path.source.data %>/{,**/}*.{json,yml}']
       tasks: ['nunjucks']
@@ -27,11 +27,11 @@ module.exports = ->
     images:
       files: ['<%= path.source.images %>/{,**/}*']
       tasks: ['copy:images']
-    layouts:
-      files: ['<%= path.source.layouts %>/{,**/}*.nj', '!<%= path.source.layouts %>{,**/}_*.nj']
+    templates:
+      files: ['<%= path.source.templates %>/{,**/}*.nj', '!<%= path.source.templates %>{,**/}_*.nj']
       tasks: ['newer:nunjucks']
-    layoutsPartials:
-      files: ['<%= path.source.layouts %>/{,**/}_*.nj']
+    templatesPartials:
+      files: ['<%= path.source.templates %>/{,**/}_*.nj']
       tasks: ['nunjucks']
     scripts:
       files: ['<%= path.source.scripts %>/{,**/}*.js']
@@ -48,6 +48,6 @@ module.exports = ->
     sprites:
       files: ['<%= path.source.sprites %>/{,**/}*.{jpg,jpeg,gif,png}']
       tasks: ['sprite']
-    thubnails:
+    thumbnails:
       files: ['<%= path.source.images %>/{,**/}*.{jpg,jpeg,gif,png}']
       tasks: ['newer:responsive_images:thumbnails']

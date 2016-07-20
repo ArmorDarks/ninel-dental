@@ -16,11 +16,11 @@ module.exports = (grunt) ->
       defaultPages      : grunt.config('data.site.pages')
     path:
       build             : grunt.config('path.build.root')
-      layouts           : grunt.config('path.source.layouts')
-      nunjucksEnv       : grunt.config('path.source.layouts')
+      templates         : grunt.config('path.source.templates')
+      nunjucksEnv       : grunt.config('path.source.templates')
       locales           : grunt.config('path.source.locales')
     files:
-      cwd               : '<%= path.source.layouts %>/'
+      cwd               : '<%= path.source.templates %>/'
       src               : ['{,**/}*.{nj,html}', '!{,**/}_*.{nj,html}']
       dest              : '<%= path.build.root %>/'
       ext               : '.html'
@@ -57,6 +57,7 @@ module.exports = (grunt) ->
   i18n         = new Gettext()
   marked       = require('marked')
   markdown     = require('nunjucks-markdown')
+  nunjucks     = require('nunjucks')
   urlify       = require('urlify').create({
     addEToUmlauts : taskConfig.urlify.addEToUmlauts
     szToSs        : taskConfig.urlify.szToSs
@@ -67,12 +68,12 @@ module.exports = (grunt) ->
     failureOutput : taskConfig.urlify.failureOutput
   })
 
-  locales       = _.pluck(taskConfig.i18n.locales, 'locale')
+  locales       = _.map(taskConfig.i18n.locales, 'locale')
   baseLocale    = taskConfig.i18n.baseLocale
   defaultDomain = taskConfig.i18n.defaultDomain
 
   buildDir      = taskConfig.path.build
-  layoutsDir    = taskConfig.path.layouts
+  templatesDir  = taskConfig.path.templates
   localesDir    = taskConfig.path.locales
 
   # =======
@@ -215,11 +216,11 @@ module.exports = (grunt) ->
 
           ###*
            * Log specified to Grunt's console for debug purposes
-           * @param {*} variable Anything we want to log to console
+           * @param {*} input Anything we want to log to console
            * @return {string} Logs to Grunt console
           ###
-          env.addGlobal 'log', (variable) ->
-            console.log(variable)
+          env.addGlobal 'log', (input) ->
+            console.log(input)
 
           ###*
            * Get list of files or directories inside specified directory
@@ -234,6 +235,37 @@ module.exports = (grunt) ->
             grunt.file.expand({ cwd: cwd + path, filter: filter }, pattern).forEach (_file) ->
               _files.push(_file)
             _files
+
+          ###*
+           * Define config in context of current template. If config has been already
+           * defined on parent, it will extend it, unless `merge` set to false.
+           * If no `value` will be provided, it will return value of specified property.
+           * Works similar to `grunt.config()`
+           * @param  {string} prop         Prop name on which should be set `value`
+           *                               Returns `prop` if `value` not set
+           * @param  {*}      value        Value to set on specified `prop`
+           * @param  {bool}   merge = true Should config extend already existing same prop or no
+           * @return {*}                   Value of `prop`
+          ###
+          env.addGlobal 'config', (prop, value, merge = true) ->
+            ctx           = this.ctx
+            valueIsObject = typeof value == 'object' and value and not Array.isArray(value)
+
+            # Set in case `value` provided
+            if value
+
+              if not valueIsObject or not merge or not ctx.hasOwnProperty(prop)
+                ctx[prop] = value
+              else
+                if ctx.hasOwnProperty(prop)
+                  result = Object.assign(value, ctx[prop])
+                  ctx[prop] = result
+
+              return
+
+            # Get if no `value` provided
+            else
+              return ctx[prop]
 
           ###*
            * Get information about page from specified object.
@@ -283,115 +315,95 @@ module.exports = (grunt) ->
 
           ###*
           * Load string from current locale
-          * @param {string}              string          String, which should be loaded
-          * @param {string|object|array} placeholders... List of placeholders, object with named
-          *                                              placeholders or arrays of placeholders
+          * @param {string} string          String, which should be loaded
           * @return {string} Translated string into current locale
           ###
-          env.addGlobal 'gettext', (string, placeholders...) ->
-            string = i18n.dgettext(currentLocale, string)
-            placeholders.unshift(string)
-            printf.apply null, placeholders
+          env.addGlobal 'gettext', (string) ->
+            i18n.dgettext(currentLocale, string)
 
           ###*
-           * Load string from specified locale
-           * @param {string}              locale = currentLocale Locale, from which string should be loaded
-           * @param {string}              string                 String, which should be loaded
-           * @param {string|object|array} placeholders...        List of placeholders, object with named
-           *                                                     placeholders or arrays of placeholders
+           * Load string from specified domain
+           * @param {string} domain = currentLocale Domain or locale, from which string should be loaded
+           *                                        `en-US:other:inner` will load from `en-US/other/inner.po`
+           *                                        `:other` will load from `{{currentLocale}}/other.po`
+           * @param {string} string                 String, which should be loaded
            * @return {string} Translated string into specified locale
           ###
-          env.addGlobal 'dgettext', (locale = currentLocale, string, placeholders...) ->
-            string = i18n.dgettext(locale, string)
-            placeholders.unshift(string)
-            printf.apply null, placeholders
+          env.addGlobal 'dgettext', (domain = currentLocale, string) ->
+            domain = if domain.charAt(0) == ':' then currentLocale + domain else domain
+            i18n.dgettext(domain, string)
 
           ###*
           * Load plural string from current locale
-          * @param {string}              string          String, which should be loaded
-          * @param {string}              stringPlural    Plural form of string
-          * @param {number}              count           Count for detecting correct plural form
-          * @param {string|object|array} placeholders... List of placeholders, object with named
-          *                                              placeholders or arrays of placeholders
+          * @param {string} string          String, which should be loaded
+          * @param {string} pluralString    Plural form of string
+          * @param {number} count           Count for detecting correct plural form
           * @return {string} Pluralized and translated into current locale string
           ###
-          env.addGlobal 'ngettext', (string, stringPlural, count, placeholders...) ->
-            string = i18n.dngettext(currentLocale, string, stringPlural, count)
-            placeholders.unshift(string)
-            printf.apply null, placeholders
+          env.addGlobal 'ngettext', (string, pluralString, count) ->
+            i18n.dngettext(currentLocale, string, pluralString, count)
 
           ###*
-           * Load plural string from specified locale
-           * @param {string}              locale = currentLocale Locale, from which string should be loaded
-           * @param {string}              string                 String, which should be loaded
-           * @param {string}              stringPlural           Plural form of string
-           * @param {number}              count                  Count for detecting correct plural form
-           * @param {string|object|array} placeholders...        List of placeholders, object with named
-           *                                                     placeholders or arrays of placeholders
+           * Load plural string from specified domain
+           * @param {string} domain = currentLocale Domain or locale, from which string should be loaded
+           *                                        `en-US:other:inner` will load from `en-US/other/inner.po`
+           *                                        `:other` will load from `{{currentLocale}}/other.po`
+           * @param {string} string                 String, which should be loaded
+           * @param {string} pluralString           Plural form of string
+           * @param {number} count                  Count for detecting correct plural form
            * @return {string} Pluralized and translated into specified loca stringle
           ###
-          env.addGlobal 'dngettext', (locale = currentLocale, string, stringPlural, count, placeholders...) ->
-            string = i18n.dngettext(locale, string, stringPlural, count)
-            placeholders.unshift(string)
-            printf.apply null, placeholders
+          env.addGlobal 'dngettext', (domain = currentLocale, string, pluralString, count) ->
+            domain = if domain.charAt(0) == ':' then currentLocale + domain else domain
+            i18n.dngettext(domain, string, pluralString, count)
 
           ###*
           * Load string of specific context from current locale
-          * @param {string}              context         Context of curret string
-          * @param {string}              string          String, which should be loaded
-          * @param {string|object|array} placeholders... List of placeholders, object with named
-          *                                              placeholders or arrays of placeholders
+          * @param {string} context         Context of curret string
+          * @param {string} string          String, which should be loaded
           * @return {string} Translated string into current locale
           ###
-          env.addGlobal 'pgettext', (context, string, placeholders...) ->
-            string = i18n.dpgettext(currentLocale, context, string)
-            placeholders.unshift(string)
-            printf.apply null, placeholders
+          env.addGlobal 'pgettext', (context, string) ->
+            i18n.dpgettext(currentLocale, context, string)
 
           ###*
-           * Load string of specific context from specified locale
-           * @param {string}              locale = currentLocale Locale, from which string should be loaded
-           * @param {string}              context                Context of curret string
-           * @param {string}              string                 String, which should be loaded
-           * @param {string|object|array} placeholders...        List of placeholders, object with named
-           *                                                     placeholders or arrays of placeholders
+           * Load string of specific context from specified domain
+           * @param {string} domain = currentLocale Domain or locale, from which string should be loaded
+           *                                        `en-US:other:inner` will load from `en-US/other/inner.po`
+           *                                        `:other` will load from `{{currentLocale}}/other.po`
+           * @param {string} context                Context of curret string
+           * @param {string} string                 String, which should be loaded
            * @return {string} Translated string into specified locale
           ###
-          env.addGlobal 'dpgettext', (locale = currentLocale, context, string, placeholders...) ->
-            string = i18n.dpgettext(locale, context, string)
-            placeholders.unshift(string)
-            printf.apply null, placeholders
+          env.addGlobal 'dpgettext', (domain = currentLocale, context, string) ->
+            domain = if domain.charAt(0) == ':' then currentLocale + domain else domain
+            i18n.dpgettext(domain, context, string)
 
           ###*
           * Load plural string of specific context from current locale
-          * @param {string}              context         Context of curret string
-          * @param {string}              string          String, which should be loaded
-          * @param {string}              stringPlural    Plural form of string
-          * @param {number}              count           Count for detecting correct plural form
-          * @param {string|object|array} placeholders... List of placeholders, object with named
-          *                                              placeholders or arrays of placeholders
+          * @param {string} context         Context of curret string
+          * @param {string} string          String, which should be loaded
+          * @param {string} pluralString    Plural form of string
+          * @param {number} count           Count for detecting correct plural form
           * @return {string} Pluralized and translated into current locale string
           ###
-          env.addGlobal 'npgettext', (context, string, stringPlural, count, placeholders...) ->
-            string = i18n.dnpgettext(currentLocale, context, string, stringPlural, count)
-            placeholders.unshift(string)
-            printf.apply null, placeholders
+          env.addGlobal 'npgettext', (context, string, pluralString, count) ->
+            i18n.dnpgettext(currentLocale, context, string, pluralString, count)
 
           ###*
-           * Load plural string of specific context from specified locale
-           * @param {string}              locale = currentLocale Locale, from which string should be loaded
-           * @param {string}              context                Context of curret string
-           * @param {string}              string                 String, which should be loaded
-           * @param {string}              stringPlural           Plural form of string
-           * @param {number}              count                  Count for detecting correct plural form
-           * @param {string|object|array} placeholders...        List of placeholders, object with named
-           *                                                     placeholders or arrays of placeholders
+           * Load plural string of specific context from specified domain
+           * @param {string} domain = currentLocale Domain or locale, from which string should be loaded
+           *                                        `en-US:other:inner` will load from `en-US/other/inner.po`
+           *                                        `:other` will load from `{{currentLocale}}/other.po`
+           * @param {string} context                Context of curret string
+           * @param {string} string                 String, which should be loaded
+           * @param {string} pluralString           Plural form of string
+           * @param {number} count                  Count for detecting correct plural form
            * @return {string} Pluralized and translated into specified loca stringle
           ###
-          env.addGlobal 'dnpgettext', (locale = currentLocale, context, string, stringPlural, count, placeholders...) ->
-            string = i18n.dnpgettext(locale, context, string, stringPlural, count)
-            placeholders.unshift(string)
-            printf.apply null, placeholders
+          env.addGlobal 'dnpgettext', (domain = currentLocale, context, string, pluralString, count) ->
+            domain = if domain.charAt(0) == ':' then currentLocale + domain else domain
+            i18n.dnpgettext(domain, context, string, pluralString, count)
 
           # =======
           # Filters
@@ -401,7 +413,7 @@ module.exports = (grunt) ->
            * Replaces last array element with new value
            * @warn Mutates array
            * @param {array} array Target array
-           * @param {*} value     New value
+           * @param {*}     value New value
            * @return {array} Mutated array
           ###
           env.addFilter 'popIn', (array, value) ->
@@ -413,12 +425,24 @@ module.exports = (grunt) ->
            * Adds value to the end of an array
            * @warn Mutates array
            * @param {array} array Target array
-           * @param {*} value     Value to be pushed in
+           * @param {*}     value Value to be pushed in
            * @return {array} Mutated array
           ###
           env.addFilter 'pushIn', (array, value) ->
             array.push(value)
             array
+
+          ###*
+           * Renders output of `caller()` once again. Useful if you're
+           * using `{% raw %}` block inside of call, for example,
+           * to showcase nunjucks code
+           * @param {object} caller Caller to force render
+           * @return {string} Rendered html
+           *
+           * @todo  Related to this issue https://github.com/mozilla/nunjucks/issues/783
+          ###
+          env.addFilter 'renderCaller', (caller) ->
+            nunjucks.renderString(caller.val, this.getVariables());
 
           ###*
            * Get language code from locale, without country
@@ -430,9 +454,9 @@ module.exports = (grunt) ->
 
           ###*
            * Replace placeholders with provided values
-           * @param {string} string                       String in which should be made replacement
-           * @param {string|object|array} placeholders... List of placeholders, object with named
-           *                                              placeholders or arrays of placeholders
+           * @param {string}                     string          String in which should be made replacement
+           * @param {number|string|object|array} placeholders... List of arguments as placeholders, object with named
+           *                                                     placeholders or arrays of placeholders
            * @return {string} String with replaced placeholders
           ###
           env.addFilter 'template', (string, placeholders...) ->
@@ -485,9 +509,10 @@ module.exports = (grunt) ->
             ulrlify(string, options)
 
         preprocessData: (data) ->
-          pagepath    = humanReadableUrl(@src[0].replace(layoutsDir + '/', ''))
-          pagedir     = path.dirname(pagepath)
-          pagedirname = path.basename(pagedir)
+          pagepath     = humanReadableUrl(@src[0].replace(templatesDir + '/', ''))
+          pagedir      = path.dirname(pagepath)
+          pagedirname  = path.basename(pagedir)
+          pagebasename = path.basename(pagepath, path.extname(pagepath))
 
           data.page = data.page || {}
 
@@ -497,8 +522,8 @@ module.exports = (grunt) ->
           data.page.region     = getRegioncode(currentLocale)
           data.page.rtl        = _.find(taskConfig.i18n.locales, { locale: currentLocale }).rtl
           data.page.url        = if pagedir == '.' then '' else pagedir
-          data.page.breadcrumb = if pagedir == '.' then ['.'] else pagedir.split('/')
-          data.page.basename   = path.basename(pagepath, path.extname(pagepath))
+          data.page.breadcrumb = if pagedir == '.' then [pagebasename] else pagedir.split('/')
+          data.page.basename   = pagebasename
           data.page.dirname    = pagedirname
 
           data

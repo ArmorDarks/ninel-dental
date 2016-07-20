@@ -1,8 +1,10 @@
-{% extends "_main.nj" %}
+{% extends '_layouts/_main.nj' %}
 
 
 {# --------- #}
-{% set pageClass         = "l-other" %}
+{{ config('page', {
+  class          : 'l-other'
+}) }}
 {# --------- #}
 
 

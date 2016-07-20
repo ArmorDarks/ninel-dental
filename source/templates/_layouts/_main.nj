@@ -1,4 +1,4 @@
-{% extends '_layout.nj' %}
+{% extends '_layouts/_base.nj' %}
 
 
 {% block body %}
@@ -60,22 +60,22 @@
   <!-- Site's content -->
   <!-- ============== -->
 
-  {% if pageClass == "l-index" %}
+  {% if page.class == "l-index" %}
     <div id="cont">
 
       <div id="main_cont_menu">
         {# <jdoc:include type="modules" name="main_search" /> #}
-        <ul class="menu">{{ components.menu(showSub = true) }}</ul>
+        <ul class="menu">{{ components.Menu(showSub = true) }}</ul>
       </div>
 
       <div id="main_cont_cont">
 
         {% if showBreadcrumb %}
-          {{ components.breadcrumb() }}
+          {{ components.Breadcrumb() }}
         {% endif %}
 
-        {% if pageContentTitle %}
-          <h1 class="">{{ pageContentTitle }}</h1>
+        {% if page.contentTitle %}
+          <h1 class="">{{ page.contentTitle }}</h1>
         {% endif %}
 
         <p></p>
@@ -83,7 +83,7 @@
 
         {% block main %}{% endblock %}
 
-  {% if pageClass == "l-index" %}
+  {% if page.class == "l-index" %}
       </div>
 
     </div>
@@ -96,7 +96,7 @@
   <!--/noindex-->
   <div id="footer_links">
     <ul class="menu_footer">
-      {{ components.menu(showSub = false) }}
+      {{ components.Menu(showSub = false) }}
     </ul>
   </div>
 
