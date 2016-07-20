@@ -43,7 +43,7 @@
     <div id="main_t-about"><a href="{{ localeDir() }}/about"><img src="/{{ path.images }}/ui/frame_t-we.png" width="276" height="65" alt="About Us" /></a></div>
     <div id="main_aboutus">
       {{ gettext('Узнать больше о клинике, ее персонале, сертефикатах,
-      а так же достижениях можно %(linkStart)sздесь...%(linkEnd)s', {
+      а так же достижениях можно %(linkStart)sздесь...%(linkEnd)s')|template({
         linkStart: '<a href="' + localeDir() + '/about">',
         linkEnd: '</a>'
       }) }}
@@ -58,7 +58,7 @@
     </div>
     <div id="main_t-work"><a href="{{ localeDir() }}/work"><img src="/{{ path.images }}/ui/frame_t-work.png" width="339" height="65" alt="Our work" /></a></div>
     <div id="main_work">
-      {{ gettext('%(linkStart)sЗдесь%(linkEnd)s Вы можете ознакомиться с некоторыми из наших работ', {
+      {{ gettext('%(linkStart)sЗдесь%(linkEnd)s Вы можете ознакомиться с некоторыми из наших работ')|template({
         linkStart: '<a href="' + localeDir() + '/work">',
         linkEnd: '</a>'
       }) }}
@@ -78,7 +78,7 @@
     </div>
     <div id="main_t-guestb"><a href="{{ localeDir() }}/feedback"><img src="/{{ path.images }}/ui/frame_t-guestb.png" width="457" height="65" alt="What talking about us" /></a></div>
     <div id="main_guestb">
-      {{ gettext('В конце концов, Вы должны знать %(linkStart)sчто о нас думают%(linkEnd)s другие', {
+      {{ gettext('В конце концов, Вы должны знать %(linkStart)sчто о нас думают%(linkEnd)s другие')|template({
         linkStart: '<a href="' + localeDir() + '/feedback">',
         linkEnd: '</a>'
       }) }}

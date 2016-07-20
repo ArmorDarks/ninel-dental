@@ -98,11 +98,12 @@ module.exports = (grunt) ->
         name: '<%= pkg.name %>'
         desc: '<%= pkg.description %>'
         homepage: '<%= pkg.homepage %>'
-        twitter: '@LotusTM'
+        twitter: '@'
         version: '<%= pkg.version %>'
         locales: '<%= i18n.locales.list %>'
         baseLocale: '<%= i18n.baseLocale %>'
         pages: grunt.file.readYAML 'source/data/pages.yml'
+      company: grunt.file.readYAML 'source/data/company.yml'
       data:
         currentYear: new Date().getFullYear()
 
