@@ -337,3 +337,11 @@ Options -MultiViews
 <IfModule mod_php5.c>
   php_value session.cookie_httponly true
 </IfModule>
+
+# ----------------------------------------------------------------------
+
+# Error page
+
+# ----------------------------------------------------------------------
+
+ErrorDocument 404 /404.html
