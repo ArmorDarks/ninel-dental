@@ -13,7 +13,7 @@
 
 	<div class="item-page">
 
-		<div style="float:left;padding-top:15px;padding-right:10px;">
+		<div style="float:left;padding-right:10px;">
 		<a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/photos/IMG_1426.jpg" title="Работа стоматолога"><img class="shrink" src="/{{ path.images }}/thumbnails/photos/IMG_1426-326pxx217.jpg" border="0" alt="Работа стоматолога" width="326px" height="217"></a>
 		</div>
 

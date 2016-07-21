@@ -13,7 +13,7 @@
 
   <div class="item-page">
 
-    <div style="float:left;padding-top:15px;padding-right:10px;">
+    <div style="float:left;padding-right:10px;">
       <a class="thumbnail fancybox" data-fancybox-group="group" href="/{{ path.images }}/photos/IMG_1451.jpg" onclick="return hs.expand(this, { captionText: &quot;Аппарат Durr Dental Vector&quot;, slideshowGroup: &quot;11&quot; })" title="Аппарат Durr Dental Vector">
         <img class="shrink" src="/{{ path.images }}/thumbnails/photos/IMG_1451-326pxx217.jpg" border="0" alt="Аппарат Durr Dental Vector" width="326px" height="217"></a>
     </div>
