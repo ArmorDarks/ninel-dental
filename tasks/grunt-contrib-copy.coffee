@@ -10,6 +10,7 @@ module.exports = ->
         expand: true
         cwd: '<%= path.source.static %>/'
         src: ['**']
+        dot: true
         dest: '<%= path.build.root %>/'
       ]
     images:
